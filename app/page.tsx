@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 
 export default function Home() {
     const mainRef = useRef<HTMLDivElement>(null);
-    const inactivityTime = 15000; // in milliseconds
+    const inactivityTime = 15000; // in milliseconds // 15000
 
     useEffect(() => {
         let lastActivityTime = Date.now();
