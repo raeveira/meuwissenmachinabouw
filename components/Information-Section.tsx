@@ -5,6 +5,7 @@ import {
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
+import POI from "@/components/POI";
 
 const itim = Itim({
     weight: "400",
@@ -27,28 +28,27 @@ const InformationSection = () => {
             </div>
             <div className={'w-screen h-screen relative'}>
                 <Image src={'/front-page/soccerfield.png'} alt={'soccerfield'} fill={true}
-                       className={'object-cover select-none pointer-events-none'}/>
-                <div
-                    className={'h-[64px] w-[64px] absolute top-[38.5%] left-[13.15%] bg-yellow-400 rounded-xl'}>
-                    <HoverCard>
-                        <HoverCardTrigger>
-                            <div
-                                className={'h-[16px] w-[16px] rotate-45 rounded-[4px] absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-yellow-400'}/>
-                            <div className={'absolute top-0 left-0 w-full h-full flex items-center justify-center select-none'}>
-                                Lorem
-                            </div>
-                        </HoverCardTrigger>
+                       className={'object-cover select-none pointer-events-none max-desktop-sm:object-contain'}/>
+                {/* Left Side */}
+                <POI positionX={253} positionY={355} imageSrc={'/default.png'}/>
+                <POI positionX={553} positionY={250} imageSrc={'/default.png'}/>
+                <POI positionX={765} positionY={240} imageSrc={'/default.png'}/>
+                <POI positionX={472} positionY={450} imageSrc={'/default.png'}/>
+                <POI positionX={679} positionY={362} imageSrc={'/default.png'}/>
+                <POI positionX={323} positionY={555} imageSrc={'/default.png'}/>
+                <POI positionX={125} positionY={575} imageSrc={'/POI/vervoer.jpeg'}/>
+                <POI positionX={525} positionY={565} imageSrc={'/default.png'}/>
+                <POI positionX={730} positionY={585} imageSrc={'/default.png'}/>
+                <POI positionX={630} positionY={475} imageSrc={'/default.png'}/>
+                <POI positionX={425} positionY={330} imageSrc={'/default.png'}/>
 
-                        <HoverCardContent className={'mt-16 bg-yellow-400 border-yellow-300'}>
-                            <h2 className={'text-xl font-semibold'}>Hover Card</h2>
-                            <p className={'text-sm'}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec
-                                fermentum
-                                libero. Integer at semper ante. Sed nec nisl in metus tincidunt
-                                fermentum.
-                            </p>
-                        </HoverCardContent>
-                    </HoverCard></div>
+                {/* Right Side */}
+                <POI positionX={1068} positionY={538} imageSrc={'/default.png'}/>
+                <POI positionX={1343} positionY={430} imageSrc={'/default.png'}/>
+                <POI positionX={1660} positionY={350} imageSrc={'/default.png'}/>
+                <POI positionX={1468} positionY={365} imageSrc={'/default.png'}/>
+                <POI positionX={1170} positionY={363} imageSrc={'/default.png'}/>
+                <POI positionX={1118} positionY={265} imageSrc={'/default.png'}/>
             </div>
         </section>
     )

@@ -9,6 +9,13 @@ export default {
   ],
   theme: {
   	extend: {
+		screens: {
+			'desktop-xl': '1920px',
+			'desktop-lg': '1440px',
+			'desktop-sm': '1280px',
+			'tablet': '768px',
+			'mobile': '360px',
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
