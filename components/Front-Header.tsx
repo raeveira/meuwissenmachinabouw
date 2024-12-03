@@ -7,6 +7,7 @@ const itim = Itim({
     weight: "400",
     preload: true,
     display: "swap",
+    subsets: ["latin"],
 });
 
 const FrontHeader = () => {
