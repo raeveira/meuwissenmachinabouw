@@ -20,7 +20,7 @@ const InformationSection = () => {
                 </h1>
             </div>
             <div className={'w-screen h-screen relative'}>
-                <Image src={'/front-page/soccerfield.png'} alt={'soccerfield'} fill={true} className={'object-cover mt-20'}/>
+                <Image src={'/front-page/soccerfield.png'} alt={'soccerfield'} fill={true} className={'object-cover'}/>
             </div>
         </section>
     )
