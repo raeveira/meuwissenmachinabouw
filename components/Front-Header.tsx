@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import { Itim } from "next/font/google";
-import {Bookmark, Ear} from "lucide-react";
+import {Bookmark} from "lucide-react";
 import Link from "next/link";
 import {useRef, useState} from "react";
 
