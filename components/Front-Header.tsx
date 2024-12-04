@@ -57,6 +57,7 @@ const FrontHeader = () => {
                     <span>amet, consectetuer</span>
                     <span>adipiscing elit.</span>
                 </h2>
+                <div className={'border-b-4 border-b-solid border-b-[#EFC101] rounded-xl max-w-[450px]'}/>
             </div>
             <div className={'absolute top-20 right-32'}>
                 <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio} className={'-rotate-[10deg] hover:scale-125 hover:rotate-[15deg] duration-300 transition-all'}/>
@@ -67,12 +68,12 @@ const FrontHeader = () => {
                 <Link href={'#drawing'}>
                     <div
                         style={{color: bookmarkColor}}
-                        className="w-auto max-h-[64px] relative translate-x-24 -translate-y-5 transition-all duration-300 hover:translate-x-6 hover:!text-black flex items-center -space-x-5 select-none hover:cursor-pointer"
+                        className="w-auto max-h-[64px] relative flex items-center"
                     >
-                        <Bookmark size={64} color={bookmarkColor} fill={bookmarkColor}
-                                  className={'rotate-90'}/>
-                        <div style={{backgroundColor: bookmarkColor}} className="h-[43px] w-[100px] rounded-[7px]"/>
-                        <h3 className={'absolute top-[49%] left-[60%] -translate-x-[50%] -translate-y-[50%] text-xl'}>Tekening</h3>
+                        <div
+                            className="before:rounded-bl-[5px] rotate-90 relative scale-[3] pr-0 right-8 bottom-12 w-[50px] p-5 font-sans bg-no-repeat rounded-md before:content-[''] before:absolute before:top-0 before:right-0 before:w-[1.35em] before:h-[3.2em] before:bg-[linear-gradient(to_left_bottom,_transparent_50%,_#EFC101_0,_#FFE701_27px,_#9B7D00)] before:transform before:translate-x-[-0.8em] before:translate-y-[-0.73em] before:rotate-[-36.7deg] before:shadow-[0_6px_4px_-4px_#eedbd6]">
+                            <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center"><span className={'mr-3 text-[7px]'}>Tekening</span></h2>
+                        </div>
                     </div>
                 </Link>
             </div>
