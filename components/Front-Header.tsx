@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import { Itim } from "next/font/google";
-import { Bookmark } from "lucide-react";
+import {Bookmark, Ear} from "lucide-react";
 import Link from "next/link";
 import {useRef, useState} from "react";
 
@@ -58,8 +58,10 @@ const FrontHeader = () => {
                     <span>adipiscing elit.</span>
                 </h2>
             </div>
-            <div className={'absolute top-20 right-32 -rotate-[10deg] hover:scale-125 hover:rotate-[15deg] duration-300 transition-all'}>
-                <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio}/>
+            <div className={'absolute top-20 right-32'}>
+                <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio} className={'-rotate-[10deg] hover:scale-125 hover:rotate-[15deg] duration-300 transition-all'}/>
+                <Image src={'/arrow.png'} alt={'arrow point towards radio'} height={200} width={200} className={'absolute top-20 -left-44'} />
+                <span className={'text-white absolute top-60 left-10 w-max text-xl'}>Beluister hier onze radio spot!</span>
             </div>
             <div className={'absolute bottom-0 right-0'}>
                 <Link href={'#drawing'}>
