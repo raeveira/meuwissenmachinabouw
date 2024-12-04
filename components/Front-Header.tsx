@@ -33,15 +33,14 @@ const FrontHeader = () => {
             />
             <div className={'object-cover w-full h-full absolute top-0 left-0 -z-[1] bg-black opacity-60'}/>
             <div className={'container mx-auto desktop-lg:ml-40 px-4 h-full flex flex-col pt-8 space-y-40'}>
-                <div className={'relative w-16 mb-6'}>
+                <div className={'relative mb-6'}>
                     <Image
                         src={'/front-page/logo.png'}
                         alt={'Site logo'}
-                        width={64}
-                        height={55}
+                        width={300}
+                        height={71}
                         className={'object-contain'}
                     />
-                    <h1 className={'text-white text-3xl'}>MEUWISSEN</h1>
                 </div>
                 <h2 className={'text-gray-200 text-7xl font-extrabold flex flex-col'}>
                     <span>Lorem ipsum odor</span>
@@ -62,7 +61,7 @@ const FrontHeader = () => {
                         className="w-auto max-h-[64px] relative flex items-center"
                     >
                         <div
-                            className="before:rounded-bl-[5px] rotate-90 relative scale-[3] pr-0 right-8 bottom-12 w-[50px] p-5 font-sans bg-no-repeat rounded-md before:content-[''] before:absolute before:top-0 before:right-0 before:w-[1.35em] before:h-[3.2em] before:bg-[linear-gradient(to_left_bottom,_transparent_50%,_#EFC101_0,_#FFE701_27px,_#9B7D00)] before:transform before:translate-x-[-0.8em] before:translate-y-[-0.73em] before:rotate-[-36.7deg] before:shadow-[0_6px_4px_-4px_#eedbd6]">
+                            className="before:rounded-bl-[5px] rotate-90 relative scale-[4.5] pr-0 right-[60px] bottom-20 w-[50px] p-5 font-sans bg-no-repeat rounded-md before:content-[''] before:absolute before:top-0 before:right-0 before:w-[1.35em] before:h-[3.2em] before:bg-[linear-gradient(to_left_bottom,_transparent_50%,_#EFC101_0,_#FFE701_27px,_#9B7D00)] before:transform before:translate-x-[-0.8em] before:translate-y-[-0.73em] before:rotate-[-36.7deg] before:shadow-[0_6px_4px_-4px_#eedbd6]">
                             <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center"><span className={'mr-3 text-[7px]'}>Tekening</span></h2>
                         </div>
                     </div>
