@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Itim } from "next/font/google";
 import { Bookmark } from "lucide-react";
 import Link from "next/link";
+import {useRef, useState} from "react";
 
 const itim = Itim({
     weight: "400",
@@ -13,6 +14,22 @@ const itim = Itim({
 
 const FrontHeader = () => {
     const bookmarkColor = '#EFC101';
+    const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    const playRadio = () => {
+        if (!audioRef.current) {
+            audioRef.current = new Audio('/radio.mp3');
+        }
+
+        if (!isPlaying) {
+            setIsPlaying(true);
+            audioRef.current.play();
+        } else {
+            setIsPlaying(false);
+            audioRef.current.pause();
+        }
+    }
 
     return (
         <header className={`${itim.className} w-screen h-screen relative overflow-hidden snap-start snap-always`}>
@@ -42,7 +59,7 @@ const FrontHeader = () => {
                 </h2>
             </div>
             <div className={'absolute top-20 right-32 -rotate-[10deg] hover:scale-125 hover:rotate-[15deg] duration-300 transition-all'}>
-                <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195}/>
+                <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio}/>
             </div>
             <div className={'absolute bottom-0 right-0'}>
                 <Link href={'#drawing'}>
