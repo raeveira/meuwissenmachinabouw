@@ -1,15 +1,7 @@
 'use client'
 import Image from "next/image";
-import { Itim } from "next/font/google";
 import Link from "next/link";
 import {useRef, useState} from "react";
-
-const itim = Itim({
-    weight: "400",
-    preload: true,
-    display: "swap",
-    subsets: ["latin"],
-});
 
 const FrontHeader = () => {
     const bookmarkColor = '#EFC101';
@@ -31,7 +23,7 @@ const FrontHeader = () => {
     }
 
     return (
-        <header className={`${itim.className} w-screen h-screen relative overflow-hidden snap-start snap-always`}>
+        <header className={`w-screen h-screen relative overflow-hidden snap-start snap-always`}>
             <video
                 src={'/front-page/header-bg.mp4'}
                 className={'object-cover w-full h-full absolute top-0 left-0 -z-[2]'}
@@ -51,14 +43,14 @@ const FrontHeader = () => {
                     />
                     <h1 className={'text-white text-3xl'}>MEUWISSEN</h1>
                 </div>
-                <h2 className={'text-gray-200 text-7xl font-light flex flex-col'}>
+                <h2 className={'text-gray-200 text-7xl font-extrabold flex flex-col'}>
                     <span>Lorem ipsum odor</span>
                     <span>amet, consectetuer</span>
                     <span>adipiscing elit.</span>
                 </h2>
                 <div className={'border-b-4 border-b-solid border-b-[#EFC101] rounded-xl max-w-[450px]'}/>
             </div>
-            <div className={'absolute top-20 right-32'}>
+            <div className={'absolute top-20 right-44'}>
                 <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio} className={'-rotate-[10deg] hover:scale-125 hover:rotate-[15deg] hover:cursor-pointer duration-300 transition-all'}/>
                 <Image src={'/arrow.png'} alt={'arrow point towards radio'} height={200} width={200} className={'absolute top-20 -left-44'} />
                 <span className={'text-white absolute top-60 left-10 w-max text-xl'}>Beluister hier onze radio spot!</span>
