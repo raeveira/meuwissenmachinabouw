@@ -1,10 +1,5 @@
 import {Itim} from "next/font/google";
 import Image from "next/image";
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "@/components/ui/hover-card"
 import POI from "@/components/POI";
 
 const itim = Itim({
