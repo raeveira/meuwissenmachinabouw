@@ -59,7 +59,7 @@ const FrontHeader = () => {
                 <div className={'border-b-4 border-b-solid border-b-[#EFC101] rounded-xl max-w-[450px]'}/>
             </div>
             <div className={'absolute top-20 right-32'}>
-                <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio} className={'-rotate-[10deg] hover:scale-125 hover:rotate-[15deg] duration-300 transition-all'}/>
+                <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio} className={'-rotate-[10deg] hover:scale-125 hover:rotate-[15deg] hover:cursor-pointer duration-300 transition-all'}/>
                 <Image src={'/arrow.png'} alt={'arrow point towards radio'} height={200} width={200} className={'absolute top-20 -left-44'} />
                 <span className={'text-white absolute top-60 left-10 w-max text-xl'}>Beluister hier onze radio spot!</span>
             </div>
