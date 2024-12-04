@@ -41,6 +41,9 @@ const FrontHeader = () => {
                     <span>adipiscing elit.</span>
                 </h2>
             </div>
+            <div className={'absolute top-20 right-32 -rotate-[10deg] hover:scale-125 hover:rotate-[15deg] duration-300 transition-all'}>
+                <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195}/>
+            </div>
             <div className={'absolute bottom-0 right-0'}>
                 <Link href={'#drawing'}>
                     <div
