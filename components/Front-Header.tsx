@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {useRef, useState} from "react";
+import MultiTextSwitch from "@/components/MultiTextSwitch";
 
 const FrontHeader = () => {
     const bookmarkColor = '#EFC101';
@@ -43,9 +44,7 @@ const FrontHeader = () => {
                     />
                 </div>
                 <h2 className={'text-gray-200 text-7xl font-extrabold flex flex-col'}>
-                    <span>Lorem ipsum odor</span>
-                    <span>amet, consectetuer</span>
-                    <span>adipiscing elit.</span>
+                    <MultiTextSwitch/>
                 </h2>
                 <div className={'border-b-4 border-b-solid border-b-[#EFC101] rounded-xl max-w-[450px]'}/>
             </div>
