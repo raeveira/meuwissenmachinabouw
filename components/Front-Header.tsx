@@ -12,6 +12,7 @@ const FrontHeader = () => {
     const playRadio = () => {
         if (!audioRef.current) {
             audioRef.current = new Audio('/radio.mp3');
+            audioRef.current.volume = 0.05;
         }
 
         if (!isPlaying) {
