@@ -49,12 +49,12 @@ const InformationSection = () => {
                 <POI positionX={253} positionY={290} imageSrc={'/POI/yingyang.png'} header={'Doel'} text={'Het niet materiele doel van werk hebben we ook hoog in het vaandel staan.'}/>
 
                 {/* Right Side */}
-                <POI positionX={1068} positionY={473} imageSrc={'/default.png'}/>
-                <POI positionX={1343} positionY={365} imageSrc={'/default.png'}/>
-                <POI positionX={1660} positionY={285} imageSrc={'/default.png'}/>
-                <POI positionX={1468} positionY={300} imageSrc={'/default.png'}/>
-                <POI positionX={1170} positionY={297} imageSrc={'/default.png'}/>
-                <POI positionX={1118} positionY={200} imageSrc={'/default.png'}/>
+                <POI positionX={1068} positionY={473} imageSrc={'/default.png'} header={''} text={''}/>
+                <POI positionX={1343} positionY={365} imageSrc={'/default.png'} header={''} text={''}/>
+                <POI positionX={1660} positionY={285} imageSrc={'/default.png'} header={''} text={''}/>
+                <POI positionX={1468} positionY={300} imageSrc={'/default.png'} header={''} text={''}/>
+                <POI positionX={1170} positionY={297} imageSrc={'/default.png'} header={''} text={''}/>
+                <POI positionX={1118} positionY={200} imageSrc={'/default.png'} header={''} text={''}/>
             </div>
         </section>
     )
