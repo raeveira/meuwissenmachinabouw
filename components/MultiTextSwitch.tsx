@@ -19,7 +19,7 @@ const MultiTextSwitch = () => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, []);
+    });
 
     const containerVariants = {
         enter: {x: '100%', opacity: 0},
