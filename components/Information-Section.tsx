@@ -12,7 +12,7 @@ const itim = Itim({
 
 const InformationSection = () => {
     return (
-        <section id={'drawing'} className={`${itim.className} w-screen h-screen snap-start snap-always bg-[url("/front-page/design-and-engineering-materials-parallax-blue-1.jpg")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
+        <section id={'drawing'} className={`relative ${itim.className} w-screen h-screen snap-start snap-always bg-[url("/front-page/design-and-engineering-materials-parallax-blue-1.jpg")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
 
             <div className={'flex flex-col justify-center w-full text-5xl pt-5 items-center tracking-wide text-[#000000]'}>
                 <h1 className={'relative'}>Het begint met een Tekening
