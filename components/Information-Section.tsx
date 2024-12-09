@@ -10,7 +10,17 @@ const itim = Itim({
     subsets: ["latin"],
 });
 
-const images = ['/POI/draaibank.jpg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg', '/POI/waterstraal.jpg', '/POI/freesbank.jpeg']
+const images = [
+    '/partners/Lipro.JPG',
+    '/partners/Marel.JPG',
+    '/partners/Mazon.JPG',
+    '/partners/Rockwool.JPG',
+    '/partners/Seki Sui Jushi.JPG',
+    '/partners/Smurfit Kappa Roermond papier.JPG',
+    '/partners/Stork.JPG',
+    '/partners/Vekoma.JPG',
+    '/partners/Xella.JPG',
+]
 
 
 const InformationSection = () => {
@@ -27,12 +37,15 @@ const InformationSection = () => {
                     </span>
                 </h1>
                 <br/>
-                <p className={'text-xl mt-[15px] text-white rounded-t-md px-2'}>Öns speeldveld laat teamspelers lopen.</p>
-                <p className={'text-xl text-white rounded-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei: “Je gaat het pas zien als je het door hebt.”</p>
+                <p className={'text-xl mt-[15px] text-white rounded-t-md px-2'}>Öns speeldveld laat teamspelers
+                    lopen.</p>
+                <p className={'text-xl text-white rounded-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei: “Je gaat
+                    het pas zien als je het door hebt.”</p>
             </div>
             <Image src={'/front-page/vrouweJustitia.png'} alt={'soccerfield'} width={100} height={100}
                    className={'absolute top-[9rem] left-[58.5rem] z-[4]'}/>
-            <div className="absolute z-[3] w-[65.35%] h-[39px] bg-[#EFC101] top-[28.7vh] left-[19vw] overflow-hidden select-none pointer-events-none">
+            <div
+                className="absolute z-[3] w-[65.35%] h-[39px] bg-[#EFC101] top-[28.7vh] left-[19vw] overflow-hidden select-none pointer-events-none">
                 <ImageSlider
                     images={images}/>
             </div>
@@ -42,8 +55,7 @@ const InformationSection = () => {
 
                 {/* Left Side */}
                 {/* 5 */}
-                <POI positionX={765} positionY={240} imageSrc={'/POI/waterstraal.jpg'}
-                     header={'Waterstraalsnijmachine'}
+                <POI positionX={765} positionY={240} imageSrc={'/POI/waterstraal.jpg'} header={'Waterstraalsnijmachine'}
                      text={'De waterstraalsnijmachine is een onmisbare schakel in ons bedrijf. Rechtstreeks vanuit onze engineeringssoftware snijden we diverse machinedelen, in matateriaaldiktes van 0.3 tot 60mm in de meest uiteenlopende materialen. Van constructiestaal, RVS, Mangaanstaal, Titanium en zelfs Zirkonium. Alsook buijn a alle kunststoffen.'}/>
                 {/* 6 */}
                 <POI positionX={679} positionY={364} imageSrc={'/POI/freesbank.jpeg'} header={'CNC Freesmachine'}
@@ -52,13 +64,14 @@ const InformationSection = () => {
                 <POI positionX={730} positionY={505} imageSrc={'/POI/draaibank.jpg'} header={'Draaibank'}
                      text={'Voor elk bedrijf in de mechanische techniek is een cnc draaibank uiteraard een basisspeler.'}/>
                 {/* 8 */}
-                <POI positionX={470} positionY={450} imageSrc={'/default.png'} header={'Plaatwerk'}
+                <POI positionX={470} positionY={450} imageSrc={'/POI/plaatwerk.jpg'} header={'Plaatwerk'}
                      text={'In onze engineering houden we er rekening mee dat we met plaatwerk dure lasbewerkingen kunnen vervangen door gezet plaatwerk'}/>
                 {/* 9 */}
-                <POI positionX={323} positionY={555} imageSrc={'/default.png'} header={'robotfirma en machinebouw'}
+                <POI positionX={323} positionY={555} imageSrc={'/POI/robot.png'} header={'robotfirma en machinebouw'}
                      text={'Om het gat in mogelijkheden te dichten tussen robotfirma en machinebouwer zijn we gestart het de kennis over robottechniek in eigen huis te nemen.'}/>
                 {/* 10 */}
-                <POI positionX={125} positionY={575} imageSrc={'/default.png'} header={'Werkplaatsuitrusting'}
+                <POI positionX={125} positionY={575} imageSrc={'/POI/werkplaatsuitrusting.jpeg'}
+                     header={'Werkplaatsuitrusting'}
                      text={'Werkplaatsuitrusting, zonder dat dit voor ons specialismes zijn, maar toch onmisbare competenties.'}/>
                 {/* 11 */}
                 <POI positionX={553} positionY={250} imageSrc={'/POI/vervoer.jpeg'} header={'Transport'}
@@ -68,12 +81,18 @@ const InformationSection = () => {
                      text={'Het niet materiele doel van werk hebben we ook hoog in het vaandel staan.'}/>
 
                 {/* Right Side */}
-                <POI positionX={1068} positionY={538} imageSrc={'/default.png'} header={''} text={''}/>
-                <POI positionX={1343} positionY={430} imageSrc={'/default.png'} header={''} text={''}/>
-                <POI positionX={1660} positionY={350} imageSrc={'/default.png'} header={''} text={''}/>
-                <POI positionX={1468} positionY={365} imageSrc={'/default.png'} header={''} text={''}/>
-                <POI positionX={1170} positionY={362} imageSrc={'/default.png'} header={''} text={''}/>
-                <POI positionX={1118} positionY={265} imageSrc={'/default.png'} header={''} text={''}/>
+                <POI positionX={1068} positionY={538} imageSrc={'/default.png'} header={''}
+                     text={''}/>
+                <POI positionX={1343} positionY={430} imageSrc={'/default.png'} header={''}
+                     text={''}/>
+                <POI positionX={1660} positionY={350} imageSrc={'/default.png'} header={''}
+                     text={''}/>
+                <POI positionX={1468} positionY={365} imageSrc={'/default.png'} header={''}
+                     text={''}/>
+                <POI positionX={1170} positionY={362} imageSrc={'/default.png'} header={''}
+                     text={''}/>
+                <POI positionX={1118} positionY={265} imageSrc={'/default.png'} header={''}
+                     text={''}/>
             </div>
         </section>
     )
