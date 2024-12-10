@@ -85,7 +85,7 @@ const InformationSection = () => {
 
                 {/* Middle */}
                 <div
-                    className={'absolute top-[46.85%] left-[51.75%] -translate-x-1/2 -translate-y-1/2 w-[16.5rem] h-32 rounded-[4rem] grid grid-cols-2 grid-rows-2 z-[4]'}>
+                    className={'absolute top-[46.85%] left-[51.75%] -translate-x-1/2 -translate-y-1/2 w-[16.5rem] h-32 rounded-[4rem] grid grid-cols-2 grid-rows-2 z-[4] hover:cursor-pointer'}>
                     <div className={'bg-yellow-500 rounded-tl-[4rem] relative group border-t-2 border-l-2 border-white p-2'}>
                         <HoverCard>
                             <HoverCardTrigger>
