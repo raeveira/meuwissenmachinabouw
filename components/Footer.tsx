@@ -7,16 +7,21 @@ export default function Footer() {
   return (
       <footer
           className="w-screen h-screen snap-start snap-always bg-white text-white flex flex-col justify-end relative">
-        <div className={"absolute z-0 w-screen top-0 left-0 h-[25rem]"}>
+        <div className={"absolute z-0 w-screen top-0 left-0 h-[25rem] flex justify-between"}>
           <Image src={'/morph.gif'} alt={'progress of machine giff'} height={345} width={615}
-                 className={'object-contain absolute top-0 left-0'}/>
+                 className={'object-contain h-full w-auto'}/>
+          <p className={'text-base text-black mt-10 px-2 text-center font-normal'}>
+            Waar de coach tijdens de opstelling de beste spelers op de juiste plek zet,<br/>
+            zo zetten wij van Meuwissen Machinebouw de beste technieken in om de wedstrijd <br/>
+            te winnen! Ontdek hieronder hoe Meuwissen Machinebouw het voormekaar krijgt om <br/>
+            een wedstrijd te spelen waar twee winnaars uitkomen!</p>
           <Image src={'/morph2.gif'} alt={'progress of machine giff'} height={345} width={615}
-                 className={'object-contain absolute top-0 right-0'}/>
+                 className={'object-contain h-full w-auto'}/>
         </div>
 
         {/* Top Banner */}
         <div
-            className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-black rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[30%]">
+            className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-black rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[37%]">
           <div className="flex items-center gap-4">
             <h2 className="text-yellow-400 text-xl max-w-[246px]">
               Samen de wedstrijd bespreken met een kopje koffie?
