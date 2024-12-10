@@ -45,8 +45,6 @@ const InformationSection = () => {
                 <p className={'text-xl text-white rounded-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei: “Je gaat
                     het pas zien als je het door hebt.”</p>
             </div>
-            <Image src={'/front-page/vrouweJustitia.png'} alt={'soccerfield'} width={100} height={100}
-                   className={'absolute bottom-[11rem] left-[55rem] z-[4]'}/>
             <div
                 className="absolute z-[3] w-[65.35%] h-[39px] bg-[#EFC101] top-[28.7vh] left-[19vw] overflow-hidden select-none pointer-events-none">
                 <ImageSlider
@@ -85,12 +83,12 @@ const InformationSection = () => {
 
                 {/* Middle */}
                 <div
-                    className={'absolute top-[46.85%] left-[51.75%] -translate-x-1/2 -translate-y-1/2 w-[16.5rem] h-32 rounded-[4rem] grid grid-cols-2 grid-rows-2 z-[4] hover:cursor-pointer'}>
+                    className={'absolute top-[46.85%] left-[51.75%] -translate-x-1/2 -translate-y-1/2 w-[16.5rem] h-32 rounded-[4rem] grid grid-cols-2 grid-rows-2 z-[5] hover:cursor-pointer'}>
                     <div className={'rounded-tl-[4rem] relative group'}>
                         <HoverCard>
                             <HoverCardTrigger>
                                 <Image src={'/front-page/freesunit xella.JPG'} alt={''} fill={true}
-                                       className={'object-cover rounded-tl-[4rem] group-hover:scale-150 group-hover:z-[3] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                                       className={'object-cover rounded-tl-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
                             </HoverCardTrigger>
                             <HoverCardContent
                                 className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
@@ -106,7 +104,7 @@ const InformationSection = () => {
                         <HoverCard>
                             <HoverCardTrigger>
                                 <Image src={'/front-page/lisaas.png'} alt={''} fill={true}
-                                       className={'object-cover rounded-tr-[4rem] group-hover:scale-150 group-hover:z-[3] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                                       className={'object-cover rounded-tr-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
                             </HoverCardTrigger>
                             <HoverCardContent
                                 className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
@@ -121,7 +119,7 @@ const InformationSection = () => {
                         <HoverCard>
                             <HoverCardTrigger>
                                 <Image src={'/front-page/sterkte berekening.jpeg'} alt={''} fill={true}
-                                       className={'object-cover rounded-bl-[4rem] group-hover:scale-150 group-hover:z-[3] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                                       className={'object-cover rounded-bl-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
                             </HoverCardTrigger>
                             <HoverCardContent
                                 className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
@@ -135,7 +133,7 @@ const InformationSection = () => {
                         <HoverCard>
                             <HoverCardTrigger>
                                 <Image src={'/front-page/E-plan.png'} alt={''} fill={true}
-                                       className={'object-cover rounded-br-[4rem] group-hover:scale-150 group-hover:z-[3] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                                       className={'object-cover rounded-br-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
                             </HoverCardTrigger>
                             <HoverCardContent
                                 className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
@@ -164,7 +162,8 @@ const InformationSection = () => {
                         </HoverCard>
                     </div>
                 </div>
-
+                 <Image src={'/front-page/vrouweJustitia.png'} alt={'soccerfield'} width={100} height={100}
+                   className={'absolute bottom-[15.5rem] left-[55rem] z-[3]'}/>
                 {/* Right Side */}
                 <POI positionX={55.6} positionY={58.7} imageSrc={'/POI/product1.jpg'} header={''}
                      text={''}/>

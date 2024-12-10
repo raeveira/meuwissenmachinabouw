@@ -27,7 +27,7 @@ const POI = ({positionX, positionY, imageSrc, header, text}: { positionX: number
                     <div
                         className={'h-[16px] w-[16px] rotate-45 rounded-[10px] absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-yellow-400'}/>
                     <div className={'absolute top-0 left-0 w-full h-full flex items-center justify-center select-none'}>
-                        <Image src={imageSrc} alt={header} fill={true} className={'rounded-[10px] p-[2px] z-[0] relative'}/>
+                        <Image src={imageSrc} alt={header} fill={true} className={'rounded-[10px] z-[0] relative'}/>
                     </div>
                 </HoverCardTrigger>
 
