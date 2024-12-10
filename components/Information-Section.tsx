@@ -46,7 +46,7 @@ const InformationSection = () => {
                     het pas zien als je het door hebt.”</p>
             </div>
             <Image src={'/front-page/vrouweJustitia.png'} alt={'soccerfield'} width={100} height={100}
-                   className={'absolute top-[9rem] left-[58.5rem] z-[4]'}/>
+                   className={'absolute bottom-[11rem] left-[55rem] z-[4]'}/>
             <div
                 className="absolute z-[3] w-[65.35%] h-[39px] bg-[#EFC101] top-[28.7vh] left-[19vw] overflow-hidden select-none pointer-events-none">
                 <ImageSlider
@@ -86,7 +86,7 @@ const InformationSection = () => {
                 {/* Middle */}
                 <div
                     className={'absolute top-[46.85%] left-[51.75%] -translate-x-1/2 -translate-y-1/2 w-[16.5rem] h-32 rounded-[4rem] grid grid-cols-2 grid-rows-2 z-[4] hover:cursor-pointer'}>
-                    <div className={'bg-yellow-500 rounded-tl-[4rem] relative group border-t-2 border-l-2 border-white p-2'}>
+                    <div className={'rounded-tl-[4rem] relative group'}>
                         <HoverCard>
                             <HoverCardTrigger>
                                 <Image src={'/front-page/freesunit xella.JPG'} alt={''} fill={true}
@@ -102,7 +102,7 @@ const InformationSection = () => {
                             </HoverCardContent>
                         </HoverCard>
                     </div>
-                    <div className={'bg-green-500 rounded-tr-[4rem] relative group border-t-2 border-r-2 border-white p-2'}>
+                    <div className={'rounded-tr-[4rem] relative group'}>
                         <HoverCard>
                             <HoverCardTrigger>
                                 <Image src={'/front-page/lisaas.png'} alt={''} fill={true}
@@ -117,7 +117,7 @@ const InformationSection = () => {
                             </HoverCardContent>
                         </HoverCard>
                     </div>
-                    <div className={'bg-blue-500 rounded-bl-[4rem] relative group border-b-2 border-l-2 border-white p-2'}>
+                    <div className={'rounded-bl-[4rem] relative group'}>
                         <HoverCard>
                             <HoverCardTrigger>
                                 <Image src={'/front-page/sterkte berekening.jpeg'} alt={''} fill={true}
@@ -131,7 +131,7 @@ const InformationSection = () => {
                             </HoverCardContent>
                         </HoverCard>
                     </div>
-                    <div className={'bg-pink-500 rounded-br-[4rem] relative group border-b-2 border-r-2 border-white p-2'}>
+                    <div className={'rounded-br-[4rem] relative group'}>
                         <HoverCard>
                             <HoverCardTrigger>
                                 <Image src={'/front-page/E-plan.png'} alt={''} fill={true}
