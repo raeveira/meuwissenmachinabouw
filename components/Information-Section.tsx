@@ -58,29 +58,29 @@ const InformationSection = () => {
 
                 {/* Left Side */}
                 {/* 5 */}
-                <POI positionX={765} positionY={240} imageSrc={'/POI/waterstraal.jpg'} header={'Waterstraalsnijmachine'}
+                <POI positionX={39.8} positionY={26.6} imageSrc={'/POI/waterstraal.jpg'} header={'Waterstraalsnijmachine'}
                      text={'De waterstraalsnijmachine is een onmisbare schakel in ons bedrijf. Rechtstreeks vanuit onze engineeringssoftware snijden we diverse machinedelen, in matateriaaldiktes van 0.3 tot 60mm in de meest uiteenlopende materialen. Van constructiestaal, RVS, Mangaanstaal, Titanium en zelfs Zirkonium. Alsook buijn a alle kunststoffen.'}/>
                 {/* 6 */}
-                <POI positionX={679} positionY={364} imageSrc={'/POI/freesbank.jpeg'} header={'CNC Freesmachine'}
+                <POI positionX={35.4} positionY={39.5} imageSrc={'/POI/freesbank.jpeg'} header={'CNC Freesmachine'}
                      text={'is een cnc freesmachine/ bewerkingscentrum een zeer belangrijke speler. In ons bedrijf wordt deze machine zowel aan de machine alsook vanaf afstand met het grootste gemak geprogrameerd voor enklestuks werk almede ookk serieproduktie.'}/>
                 {/* 7 */}
-                <POI positionX={730} positionY={505} imageSrc={'/POI/draaibank.jpg'} header={'Draaibank'}
+                <POI positionX={38} positionY={58} imageSrc={'/POI/draaibank.jpg'} header={'Draaibank'}
                      text={'Voor elk bedrijf in de mechanische techniek is een cnc draaibank uiteraard een basisspeler.'}/>
                 {/* 8 */}
-                <POI positionX={470} positionY={450} imageSrc={'/POI/plaatwerk.jpg'} header={'Plaatwerk'}
+                <POI positionX={24.6} positionY={49} imageSrc={'/POI/plaatwerk.jpg'} header={'Plaatwerk'}
                      text={'In onze engineering houden we er rekening mee dat we met plaatwerk dure lasbewerkingen kunnen vervangen door gezet plaatwerk'}/>
                 {/* 9 */}
-                <POI positionX={323} positionY={555} imageSrc={'/POI/robot.png'} header={'robotfirma en machinebouw'}
+                <POI positionX={16.9} positionY={60.2} imageSrc={'/POI/robot.png'} header={'robotfirma en machinebouw'}
                      text={'Om het gat in mogelijkheden te dichten tussen robotfirma en machinebouwer zijn we gestart het de kennis over robottechniek in eigen huis te nemen.'}/>
                 {/* 10 */}
-                <POI positionX={125} positionY={575} imageSrc={'/POI/werkplaatsuitrusting.jpeg'}
+                <POI positionX={7} positionY={63} imageSrc={'/POI/werkplaatsuitrusting.jpeg'}
                      header={'Werkplaatsuitrusting'}
                      text={'Werkplaatsuitrusting, zonder dat dit voor ons specialismes zijn, maar toch onmisbare competenties.'}/>
                 {/* 11 */}
-                <POI positionX={553} positionY={250} imageSrc={'/POI/vervoer.jpeg'} header={'Transport'}
+                <POI positionX={28.8} positionY={27.4} imageSrc={'/POI/vervoer.jpeg'} header={'Transport'}
                      text={'Om onze flexibiliteit te ondersteunen, maken we gebruik van eigen transport tot 6000kg.'}/>
                 {/* 12 */}
-                <POI positionX={253} positionY={355} imageSrc={'/POI/yingyang.png'} header={'Doel'}
+                <POI positionX={13.1} positionY={39} imageSrc={'/POI/yingyang.png'} header={'Doel'}
                      text={'Het niet materiele doel van werk hebben we ook hoog in het vaandel staan.'}/>
 
                 {/* Middle */}
@@ -169,17 +169,17 @@ const InformationSection = () => {
                 </div>
 
                 {/* Right Side */}
-                <POI positionX={1068} positionY={538} imageSrc={'/POI/product1.jpg'} header={''}
+                <POI positionX={55.6} positionY={58.7} imageSrc={'/POI/product1.jpg'} header={''}
                      text={''}/>
-                <POI positionX={1343} positionY={430} imageSrc={'/POI/product2.png'} header={''}
+                <POI positionX={70} positionY={47.7} imageSrc={'/POI/product2.png'} header={''}
                      text={''}/>
-                <POI positionX={1660} positionY={350} imageSrc={'/front-page/cup.png'} header={'Materialistiche beloning.'}
+                <POI positionX={86.5} positionY={38.5} imageSrc={'/front-page/cup.png'} header={'Materialistiche beloning.'}
                      text={'Elke zege wordt door ons uitbundig gevierd.'}/>
-                <POI positionX={1468} positionY={365} imageSrc={'/POI/product3.jpg'} header={''}
+                <POI positionX={76.4} positionY={39.5} imageSrc={'/POI/product3.jpg'} header={''}
                      text={''}/>
-                <POI positionX={1170} positionY={362} imageSrc={'/POI/product4.jpeg'} header={''}
+                <POI positionX={60.94} positionY={39.3} imageSrc={'/POI/product4.jpeg'} header={''}
                      text={''}/>
-                <POI positionX={1118} positionY={265} imageSrc={'/POI/product5.png'} header={''}
+                <POI positionX={58.23} positionY={29} imageSrc={'/POI/product5.png'} header={''}
                      text={''}/>
             </div>
         </section>

@@ -21,7 +21,7 @@ const POI = ({positionX, positionY, imageSrc, header, text}: { positionX: number
     return (
         <div
             className={`h-[64px] w-[64px] absolute bg-yellow-400 rounded-xl`}
-            style={{top: `${positionY}px`, left: `${positionX}px`}}>
+            style={{top: `${positionY}%`, left: `${positionX}%`}}>
             <HoverCard>
                 <HoverCardTrigger>
                     <div
