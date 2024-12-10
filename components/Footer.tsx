@@ -26,7 +26,7 @@ export default function Footer() {
 
         {/* Top Banner */}
         <div
-            className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-gray-50 rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[37%]">
+            className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-black rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[48%]">
           <div className="flex items-center gap-4">
             <h2 className="text-yellow-400 text-xl max-w-[246px]">
               Samen de wedstrijd bespreken met een kopje koffie?
@@ -35,7 +35,7 @@ export default function Footer() {
                    className={'absolute -top-20 left-1/2 -translate-x-[65%] hover:-rotate-[20deg] hover:scale-125 transition-all duration-300'}/>
           </div>
           <div className={'w-[256px]'}/>
-          <div className="flex items-end flex-col gap-2 min-w-max text-black">
+          <div className="flex items-end flex-col gap-2 min-w-max">
             <span>Bel ons:</span>
             <Link
                 href="tel:+31 6 216 483 15"
@@ -48,7 +48,7 @@ export default function Footer() {
             <Link href="mailto:info@example.com">
               <Button
                   variant="outline"
-                  className="border-yellow-400 bg-gray-50 text-yellow-400 hover:bg-yellow-400 hover:text-black"
+                  className="border-yellow-400 bg-black text-yellow-400 hover:bg-yellow-400 hover:text-black"
               >
                 <Mail className="mr-2 h-4 w-4"/>
                 Stuur een <br/>mail
@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="container mx-auto px-4 py-12 bg-gray-50 pt-32">
+        <div className="container mx-auto px-4 py-12 bg-black pt-8">
           <div className="grid grid-cols-3">
             {/* Address */}
             <div className={'flex flex-col gap-y-8 items-center'}>
@@ -73,7 +73,7 @@ export default function Footer() {
             <div className="flex gap-8 flex-col" />
 
             {/* Disclaimer */}
-            <div className="max-w-xs">
+            <div className="max-w-xs pt-10">
               <h3 className="text-lg font-semibold mb-4 text-yellow-400">Vrijwaring</h3>
               <p className="text-gray-400 mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="mt-12 pt-4 border-t border-gray-200 text-center text-gray-400">
+          <div className="mt-12 pt-4 border-t border-gray-800 text-center text-gray-400">
             <p>©2024 Meuwissen Machinebouw</p>
           </div>
         </div>
