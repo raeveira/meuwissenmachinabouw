@@ -8,6 +8,7 @@ import ImageSlider from "@/components/ImageSlider";
 import {HoverCard, HoverCardContent, HoverCardTrigger} from "@/components/ui/hover-card";
 import {Button} from "@/components/ui/button";
 import {ChevronRight, X} from "lucide-react";
+import Link from "next/link";
 
 const itim = Itim({
     weight: "400",
@@ -40,7 +41,21 @@ const InformationSection = () => {
         <>
             <section id={'drawing'}
                      className={`relative ${itim.className} w-screen h-screen overflow-hidden snap-start snap-always bg-[url("/front-page/design-and-engineering-materials-parallax-blue-1.jpg")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
-
+                <div className={'absolute bottom-0 left-0 z-[5] -scale-x-[1]'}>
+                    <Link href={'#footer'}>
+                        <div
+                            className="w-auto max-h-[64px] relative flex items-center text-[#EFC101]"
+                        >
+                            <div
+                                className="before:rounded-bl-[5px] rotate-90 relative scale-[4.5] pr-0 right-[60px] bottom-20 w-[50px] p-5 font-sans bg-no-repeat rounded-md before:content-[''] before:absolute before:top-0 before:right-0 before:w-[1.35em] before:h-[3.2em] before:bg-[linear-gradient(to_left_bottom,_transparent_50%,_#EFC101_0,_#FFE701_27px,_#9B7D00)] before:transform before:translate-x-[-0.8em] before:translate-y-[-0.73em] before:rotate-[-36.7deg] before:shadow-[0_6px_4px_-4px_#eedbd6]">
+                                <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center">
+                                    <span
+                                        className={'mr-4 text-[3.5px] absolute top-[1px] left-[8px] -scale-x-[1]'}>VOLG ONS DIEP GAAN</span>
+                                </h2>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
                 <div
                     className={'flex flex-col justify-center w-full text-5xl pt-5 items-center tracking-wide text-[#000000] relative z-[3] select-none'}>
                     <h1 className={'relative'}>Het begint met een Tekening
