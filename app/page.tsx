@@ -1,5 +1,6 @@
 'use client'
 import FrontHeader from "@/components/Front-Header";
+import Footer from "@/components/Footer";
 import InformationSection from "@/components/Information-Section";
 import { useEffect, useRef } from "react";
 
@@ -54,6 +55,7 @@ export default function Home() {
         <main ref={mainRef} className={'snap-y snap-mandatory h-screen overflow-y-scroll'}>
             <FrontHeader/>
             <InformationSection/>
+            <Footer />
         </main>
     );
 }
