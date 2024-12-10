@@ -42,8 +42,13 @@ const InformationSection = () => {
                 <br/>
                 <p className={'text-xl mt-[15px] text-white rounded-t-md px-2'}>Öns speeldveld laat teamspelers
                     lopen.</p>
-                <p className={'text-xl text-white rounded-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei: “Je gaat
+                <p className={'text-xl text-white rounded-t-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei: “Je gaat
                     het pas zien als je het door hebt.”</p>
+                <p className={'text-base text-white rounded-md bg-[#D34E3B] px-2 absolute top-[8.70rem] text-center font-normal'}>
+                    Waar de coach tijdens de opstelling de beste spelers op de juiste plek zet,<br/>
+                    zo zetten wij van Meuwissen Machinebouw de beste technieken in om de wedstrijd <br/>
+                    te winnen! Ontdek hieronder hoe Meuwissen Machinebouw het voormekaar krijgt om <br/>
+                    een wedstrijd te spelen waar twee winnaars uitkomen!</p>
             </div>
             <div
                 className="absolute z-[3] w-[65.35%] h-[39px] bg-[#EFC101] top-[28.7vh] left-[19vw] overflow-hidden select-none pointer-events-none">
@@ -56,7 +61,8 @@ const InformationSection = () => {
 
                 {/* Left Side */}
                 {/* 5 */}
-                <POI positionX={39.8} positionY={26.6} imageSrc={'/POI/waterstraal.jpg'} header={'Waterstraalsnijmachine'}
+                <POI positionX={39.8} positionY={26.6} imageSrc={'/POI/waterstraal.jpg'}
+                     header={'Waterstraalsnijmachine'}
                      text={'De waterstraalsnijmachine is een onmisbare schakel in ons bedrijf. Rechtstreeks vanuit onze engineeringssoftware snijden we diverse machinedelen, in matateriaaldiktes van 0.3 tot 60mm in de meest uiteenlopende materialen. Van constructiestaal, RVS, Mangaanstaal, Titanium en zelfs Zirkonium. Alsook buijn a alle kunststoffen.'}/>
                 {/* 6 */}
                 <POI positionX={35.4} positionY={39.5} imageSrc={'/POI/freesbank.jpeg'} header={'CNC Freesmachine'}
@@ -153,7 +159,8 @@ const InformationSection = () => {
                                     <HoverCardContent
                                         className={'-mb-[3.25rem] ml-[46.25rem] bg-yellow-400 border-yellow-300 w-96'}>
                                         <div className={'grid grid-rows-1 grid-cols-[auto]'}>
-                                                <Image src={'/POI/EPLAN-Afdrukopdracht.png'} alt={'e-plan schema'} width={2339} height={1653} className={'hover:scale-150 rounded-md'} />
+                                            <Image src={'/POI/EPLAN-Afdrukopdracht.png'} alt={'e-plan schema'}
+                                                   width={2339} height={1653} className={'hover:scale-150 rounded-md'}/>
                                         </div>
                                     </HoverCardContent>
                                 </HoverCard>
@@ -162,14 +169,15 @@ const InformationSection = () => {
                         </HoverCard>
                     </div>
                 </div>
-                 <Image src={'/front-page/vrouweJustitia.png'} alt={'soccerfield'} width={100} height={100}
-                   className={'absolute bottom-[15.5rem] left-[55rem] z-[3]'}/>
+                <Image src={'/front-page/vrouweJustitia.png'} alt={'soccerfield'} width={100} height={100}
+                       className={'absolute bottom-[15.5rem] left-[55rem] z-[3]'}/>
                 {/* Right Side */}
                 <POI positionX={55.6} positionY={58.7} imageSrc={'/POI/product1.jpg'} header={''}
                      text={''}/>
                 <POI positionX={70} positionY={47.7} imageSrc={'/POI/product2.png'} header={''}
                      text={''}/>
-                <POI positionX={86.5} positionY={38.5} imageSrc={'/front-page/cup.png'} header={'Materialistiche beloning.'}
+                <POI positionX={86.5} positionY={38.5} imageSrc={'/front-page/cup.png'}
+                     header={'Materialistiche beloning.'}
                      text={'Elke zege wordt door ons uitbundig gevierd.'}/>
                 <POI positionX={76.4} positionY={39.5} imageSrc={'/POI/product3.jpg'} header={''}
                      text={''}/>

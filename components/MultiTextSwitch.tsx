@@ -29,7 +29,7 @@ const MultiTextSwitch = () => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
-    timerRef.current = setTimeout(nextSlide, 1500);
+    timerRef.current = setTimeout(nextSlide, 2500);
   }, [nextSlide]);
 
   useEffect(() => {

@@ -60,20 +60,7 @@ export default function Footer() {
             </div>
 
             {/* Site Map */}
-            <div className="flex gap-8 flex-col">
-              <h3 className="text-lg font-semibold text-yellow-400">Sitemap</h3>
-              <nav className="flex flex-col gap-y-8 items-start">
-                {["Home", "About", "Services", "Works", "Contact"].map((item) => (
-                    <Link
-                        key={item}
-                        href="#"
-                        className="text-gray-400 hover:text-yellow-400 transition-colors"
-                    >
-                      {item}
-                    </Link>
-                ))}
-              </nav>
-            </div>
+            <div className="flex gap-8 flex-col" />
 
             {/* Disclaimer */}
             <div className="max-w-xs">
