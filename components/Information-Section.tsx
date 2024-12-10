@@ -153,12 +153,9 @@ const InformationSection = () => {
                                         </Button>
                                     </HoverCardTrigger>
                                     <HoverCardContent
-                                        className={'-mt-[9.33rem] ml-[38.25rem] bg-yellow-400 border-yellow-300'}>
-                                        <div className={'grid grid-rows-2 grid-cols-[auto]'}>
-                                            <div>Schema 1</div>
-                                            <div>Schema 2</div>
-                                            <div>Schema 3</div>
-                                            <div>Schema 4</div>
+                                        className={'-mb-[3.25rem] ml-[46.25rem] bg-yellow-400 border-yellow-300 w-96'}>
+                                        <div className={'grid grid-rows-1 grid-cols-[auto]'}>
+                                                <Image src={'/POI/EPLAN-Afdrukopdracht.png'} alt={'e-plan schema'} width={2339} height={1653} className={'hover:scale-150 rounded-md'} />
                                         </div>
                                     </HoverCardContent>
                                 </HoverCard>
