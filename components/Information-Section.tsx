@@ -50,19 +50,21 @@ const InformationSection = () => {
                     </span>
                     </h1>
                     <br/>
-                    <p className={'text-xl mt-[15px] text-white rounded-t-md px-2'}>Öns speeldveld laat teamspelers
-                        lopen.</p>
-                    <p className={'text-xl text-white rounded-t-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei: “Je
-                        gaat
-                        het pas zien als je het door hebt.”</p>
+                        <p className={'text-xl mt-[36px] text-white rounded-t-md bg-[#D34E3B] px-2'}>Ons speeldveld laat teamspelers
+                            lopen.</p>
+                        <p className={'text-xl text-white rounded-t-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei:
+                            “Je
+                            gaat
+                            het pas zien als je het door hebt.”</p>
+
                 </div>
                 <div
                     className="absolute z-[3] w-[65.35%] h-[39px] bg-[#EFC101] top-[28.7vh] left-[19vw] overflow-hidden select-none pointer-events-none">
                     <ImageSlider
                         images={images}/>
                 </div>
-                <div className={'w-screen h-screen bottom-[70px] relative z-[2]'}>
-                    <Image src={'/front-page/meeuwissen-2.4.png'} alt={'soccerfield'} fill={true}
+                <div className={'w-screen h-screen -bottom-[4.35rem] absolute z-[2]'}>
+                <Image src={'/front-page/meeuwissen-2.4.png'} alt={'soccerfield'} fill={true}
                            className={'object-cover select-none pointer-events-none max-desktop-sm:object-contain'}/>
 
                     {/* Left Side */}

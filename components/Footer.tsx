@@ -8,21 +8,25 @@ export default function Footer() {
       <footer
           id={'footer'}
           className="w-screen h-screen snap-start snap-always bg-white text-white flex flex-col justify-end relative">
-        <div className={"absolute z-0 w-screen top-0 left-0 h-[25rem] flex justify-between"}>
+        <div className={"absolute z-0 w-screen top-0 left-0 flex justify-between items-end h-full max-h-[470px] pt-10"}>
           <Image src={'/morph.gif'} alt={'progress of machine giff'} height={345} width={615}
-                 className={'object-contain h-full w-auto'}/>
-          <p className={'text-base text-black mt-10 px-2 text-left font-normal'}>
-            Waar de coach tijdens de opstelling de beste spelers op de juiste plek zet,<br/>
-            zo zetten wij van Meuwissen Machinebouw de beste technieken in om de wedstrijd <br/>
-            te winnen! Wellicht heeft u hierboven al ontdekt hoe Meeuwissen Machinebouw het <br/>
+                 className={'object-contain h-full w-auto max-w-[535px]'}/>
+          <p className={'text-base text-black mt-10 px-2 text-left font-normal h-full'}>
+            <span className={'font-medium text-lg'}>Opstelling</span><br/>
+            Waar de coach tijdens de opstelling de beste spelers op de juiste plek zet,
+            zo zetten wij van Meuwissen Machinebouw de beste technieken in om de wedstrijd
+            te winnen!
+            <br/><br/>
+            <span className={'font-medium text-lg'}>Winnaars</span><br/>
+            Wellicht heeft u hierboven al ontdekt hoe Meeuwissen Machinebouw het
             voor elkaar krijgt om een wedstijd te spelen, waar 2 winnaars uitkomen.</p>
           <Image src={'/morph2.gif'} alt={'progress of machine giff'} height={345} width={615}
-                 className={'object-contain h-full w-auto'}/>
+                 className={'object-contain h-full w-auto max-w-[535px]'}/>
         </div>
 
         {/* Top Banner */}
         <div
-            className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-black rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[37%]">
+            className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-gray-50 rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[37%]">
           <div className="flex items-center gap-4">
             <h2 className="text-yellow-400 text-xl max-w-[246px]">
               Samen de wedstrijd bespreken met een kopje koffie?
@@ -31,7 +35,7 @@ export default function Footer() {
                    className={'absolute -top-20 left-1/2 -translate-x-[65%] hover:-rotate-[20deg] hover:scale-125 transition-all duration-300'}/>
           </div>
           <div className={'w-[256px]'}/>
-          <div className="flex items-end flex-col gap-2 min-w-max">
+          <div className="flex items-end flex-col gap-2 min-w-max text-black">
             <span>Bel ons:</span>
             <Link
                 href="tel:+31 6 216 483 15"
@@ -44,7 +48,7 @@ export default function Footer() {
             <Link href="mailto:info@example.com">
               <Button
                   variant="outline"
-                  className="border-yellow-400 bg-black text-yellow-400 hover:bg-yellow-400 hover:text-black"
+                  className="border-yellow-400 bg-gray-50 text-yellow-400 hover:bg-yellow-400 hover:text-black"
               >
                 <Mail className="mr-2 h-4 w-4"/>
                 Stuur een <br/>mail
@@ -54,7 +58,7 @@ export default function Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="container mx-auto px-4 py-12 bg-black pt-32">
+        <div className="container mx-auto px-4 py-12 bg-gray-50 pt-32">
           <div className="grid grid-cols-3">
             {/* Address */}
             <div className={'flex flex-col gap-y-8 items-center'}>
@@ -90,7 +94,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="mt-12 pt-4 border-t border-gray-800 text-center text-gray-400">
+          <div className="mt-12 pt-4 border-t border-gray-200 text-center text-gray-400">
             <p>©2024 Meuwissen Machinebouw</p>
           </div>
         </div>
