@@ -8,10 +8,10 @@ export default function Footer() {
       <footer
           id={'footer'}
           className="w-screen h-screen snap-start snap-always bg-white text-white flex flex-col justify-end relative">
-        <div className={"absolute z-0 w-screen top-0 left-0 flex justify-between items-end h-full max-h-[470px] pt-10"}>
+        <div className={"absolute z-0 w-screen top-0 left-0 flex justify-between items-end h-full max-h-[665px] pt-10"}>
           <Image src={'/morph.gif'} alt={'progress of machine giff'} height={345} width={615}
                  className={'object-contain h-full w-auto max-w-[535px]'}/>
-          <p className={'text-base text-black mt-10 px-2 text-left font-normal h-full'}>
+          <p className={'text-base text-gray-900 pt-16 px-2 text-left font-normal h-full'}>
             <span className={'font-medium text-lg'}>Opstelling</span><br/>
             Waar de coach tijdens de opstelling de beste spelers op de juiste plek zet,
             zo zetten wij van Meuwissen Machinebouw de beste technieken in om de wedstrijd
@@ -22,11 +22,12 @@ export default function Footer() {
             voor elkaar krijgt om een wedstijd te spelen, waar 2 winnaars uitkomen.</p>
           <Image src={'/morph2.gif'} alt={'progress of machine giff'} height={345} width={615}
                  className={'object-contain h-full w-auto max-w-[535px]'}/>
+          <Image src={'/front-page/design-and-engineering-materials-parallax-blue-1.jpg'} alt={'tekening achtergrond'} fill={true} className={'object-cover relative -z-[1] select-none pointer-events-none'}/>
         </div>
 
         {/* Top Banner */}
         <div
-            className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-black rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[48%]">
+            className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-black rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[48%] z-[1]">
           <div className="flex items-center gap-4">
             <h2 className="text-yellow-400 text-xl max-w-[246px]">
               Samen de wedstrijd bespreken met een kopje koffie?
@@ -58,7 +59,7 @@ export default function Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="container mx-auto px-4 py-12 bg-black pt-8">
+        <div className="container mx-auto px-4 py-12 bg-black pt-8 relative z-[0]">
           <div className="grid grid-cols-3">
             {/* Address */}
             <div className={'flex flex-col gap-y-8 items-center'}>
