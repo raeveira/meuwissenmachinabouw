@@ -2,6 +2,9 @@ import {Itim} from "next/font/google";
 import Image from "next/image";
 import POI from "@/components/POI";
 import ImageSlider from "@/components/ImageSlider";
+import {HoverCard, HoverCardContent, HoverCardTrigger} from "@/components/ui/hover-card";
+import {Button} from "@/components/ui/button";
+import {ChevronRight} from "lucide-react";
 
 const itim = Itim({
     weight: "400",
@@ -80,18 +83,103 @@ const InformationSection = () => {
                 <POI positionX={253} positionY={355} imageSrc={'/POI/yingyang.png'} header={'Doel'}
                      text={'Het niet materiele doel van werk hebben we ook hoog in het vaandel staan.'}/>
 
+                {/* Middle */}
+                <div
+                    className={'absolute top-[46.85%] left-[51.75%] -translate-x-1/2 -translate-y-1/2 w-[16.5rem] h-32 rounded-[4rem] grid grid-cols-2 grid-rows-2 z-[4]'}>
+                    <div className={'bg-yellow-500 rounded-tl-[4rem] relative group border-t-2 border-l-2 border-white p-2'}>
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <Image src={'/front-page/freesunit xella.JPG'} alt={''} fill={true}
+                                       className={'object-cover rounded-tl-[4rem] group-hover:scale-150 group-hover:z-[3] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                            </HoverCardTrigger>
+                            <HoverCardContent
+                                className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
+                                <h1 className={'text-2xl font-semibold'}>Software</h1>
+                                <p className={'text-sm'}>Voor onze engineering maken wij gebruik van 3d software,
+                                    waar tevens de werkplaatstekeningen in aangemaakt worden, als ook animaties,
+                                    sterkte berekeningen, en eventueel een bill off material export naar ons erp
+                                    systeem.</p>
+                            </HoverCardContent>
+                        </HoverCard>
+                    </div>
+                    <div className={'bg-green-500 rounded-tr-[4rem] relative group border-t-2 border-r-2 border-white p-2'}>
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <Image src={'/front-page/lisaas.png'} alt={''} fill={true}
+                                       className={'object-cover rounded-tr-[4rem] group-hover:scale-150 group-hover:z-[3] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                            </HoverCardTrigger>
+                            <HoverCardContent
+                                className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
+                                <h1 className={'text-2xl font-semibold'}>ERP Systeem</h1>
+                                <p className={'text-sm'}>in een multidiciplinair bedrijf is het van belang een goede
+                                    organisatie struktuur te hebben door middel Enterprice Recource Planning, zodat
+                                    urenboekingen, inkopen, verkopen volgens een bepaalde standaard verlopen.</p>
+                            </HoverCardContent>
+                        </HoverCard>
+                    </div>
+                    <div className={'bg-blue-500 rounded-bl-[4rem] relative group border-b-2 border-l-2 border-white p-2'}>
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <Image src={'/front-page/sterkte berekening.jpeg'} alt={''} fill={true}
+                                       className={'object-cover rounded-bl-[4rem] group-hover:scale-150 group-hover:z-[3] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                            </HoverCardTrigger>
+                            <HoverCardContent
+                                className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
+                                <h1 className={'text-2xl font-semibold'}>Berekeningen</h1>
+                                <p className={'text-sm'}>Om onze ontwerpen te optimaliseren, of inzichtelijk te maken,
+                                    maken we oa gebruik van CAE berekeningen.</p>
+                            </HoverCardContent>
+                        </HoverCard>
+                    </div>
+                    <div className={'bg-pink-500 rounded-br-[4rem] relative group border-b-2 border-r-2 border-white p-2'}>
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <Image src={'/front-page/E-plan.png'} alt={''} fill={true}
+                                       className={'object-cover rounded-br-[4rem] group-hover:scale-150 group-hover:z-[3] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                            </HoverCardTrigger>
+                            <HoverCardContent
+                                className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
+                                <h1 className={'text-2xl font-semibold'}>E-Plan</h1>
+                                <p className={'text-sm'}>voor de E-engineering werken wij met het algemeen gebruikte
+                                    programma E-plan.</p>
+                                <HoverCard>
+                                    <HoverCardTrigger>
+                                        <Button
+                                            variant="outline"
+                                            className="mt-2 bg-yellow-500 text-black hover:bg-yellow-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105 font-semibold"
+                                        >
+                                            Schema&apos;s
+                                            <ChevronRight className="ml-2 h-4 w-4"/>
+                                        </Button>
+                                    </HoverCardTrigger>
+                                    <HoverCardContent
+                                        className={'-mt-[9.33rem] ml-[38.25rem] bg-yellow-400 border-yellow-300'}>
+                                        <div className={'grid grid-rows-2 grid-cols-[auto]'}>
+                                            <div>Schema 1</div>
+                                            <div>Schema 2</div>
+                                            <div>Schema 3</div>
+                                            <div>Schema 4</div>
+                                        </div>
+                                    </HoverCardContent>
+                                </HoverCard>
+
+                            </HoverCardContent>
+                        </HoverCard>
+                    </div>
+                </div>
+
                 {/* Right Side */}
-                <POI positionX={1068} positionY={538} imageSrc={'/default.png'} header={''}
+                <POI positionX={1068} positionY={538} imageSrc={'/POI/product1.jpg'} header={''}
                      text={''}/>
-                <POI positionX={1343} positionY={430} imageSrc={'/default.png'} header={''}
+                <POI positionX={1343} positionY={430} imageSrc={'/POI/product2.png'} header={''}
                      text={''}/>
-                <POI positionX={1660} positionY={350} imageSrc={'/default.png'} header={''}
+                <POI positionX={1660} positionY={350} imageSrc={'/front-page/cup.png'} header={'Materialistiche beloning.'}
+                     text={'Elke zege wordt door ons uitbundig gevierd.'}/>
+                <POI positionX={1468} positionY={365} imageSrc={'/POI/product3.jpg'} header={''}
                      text={''}/>
-                <POI positionX={1468} positionY={365} imageSrc={'/default.png'} header={''}
+                <POI positionX={1170} positionY={362} imageSrc={'/POI/product4.jpeg'} header={''}
                      text={''}/>
-                <POI positionX={1170} positionY={362} imageSrc={'/default.png'} header={''}
-                     text={''}/>
-                <POI positionX={1118} positionY={265} imageSrc={'/default.png'} header={''}
+                <POI positionX={1118} positionY={265} imageSrc={'/POI/product5.png'} header={''}
                      text={''}/>
             </div>
         </section>
