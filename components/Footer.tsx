@@ -6,6 +6,10 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="w-screen h-screen snap-start snap-always bg-white text-white flex flex-col justify-end relative">
+      <div className={"absolute z-0 w-screen top-0 left-0 h-[25rem] relative"}>
+        <Image src={'/morph.gif'} alt={'progress of machine giff'} height={345} width={615} className={'object-contain absolute top-0 left-0'} />
+      </div>
+
       {/* Top Banner */}
       <div className="mx-auto px-4 pr-8 py-6 flex items-center justify-between min-w-[750px] max-h-[195px] bg-black rounded-t-xl absolute left-1/2 -translate-x-1/2 top-[30%]">
         <div className="flex items-center gap-4">
@@ -50,7 +54,7 @@ export default function Footer() {
 
           {/* Site Map */}
           <div className="flex gap-8 flex-col">
-            <h3 className="text-lg font-semibold text-yellow-400">Site Map</h3>
+            <h3 className="text-lg font-semibold text-yellow-400">Sitemap</h3>
             <nav className="flex flex-col gap-y-8 items-start">
               {["Home", "About", "Services", "Works", "Contact"].map((item) => (
                 <Link
@@ -66,7 +70,7 @@ export default function Footer() {
 
           {/* Disclaimer */}
           <div className="max-w-xs">
-            <h3 className="text-lg font-semibold mb-4 text-yellow-400">Disclaimer</h3>
+            <h3 className="text-lg font-semibold mb-4 text-yellow-400">Vrijwaring</h3>
             <p className="text-gray-400 mb-4">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
               eiusmod tempor incididunt ut labore.
