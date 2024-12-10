@@ -11,11 +11,11 @@ export default function Footer() {
         <div className={"absolute z-0 w-screen top-0 left-0 h-[25rem] flex justify-between"}>
           <Image src={'/morph.gif'} alt={'progress of machine giff'} height={345} width={615}
                  className={'object-contain h-full w-auto'}/>
-          <p className={'text-base text-black mt-10 px-2 text-center font-normal'}>
+          <p className={'text-base text-black mt-10 px-2 text-left font-normal'}>
             Waar de coach tijdens de opstelling de beste spelers op de juiste plek zet,<br/>
             zo zetten wij van Meuwissen Machinebouw de beste technieken in om de wedstrijd <br/>
-            te winnen! Ontdek hieronder hoe Meuwissen Machinebouw het voormekaar krijgt om <br/>
-            een wedstrijd te spelen waar twee winnaars uitkomen!</p>
+            te winnen! Wellicht heeft u hierboven al ontdekt hoe Meeuwissen Machinebouw het <br/>
+            voor elkaar krijgt om een wedstijd te spelen, waar 2 winnaars uitkomen.</p>
           <Image src={'/morph2.gif'} alt={'progress of machine giff'} height={345} width={615}
                  className={'object-contain h-full w-auto'}/>
         </div>
