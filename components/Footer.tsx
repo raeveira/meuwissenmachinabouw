@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="w-screen h-screen snap-start snap-always bg-white text-white flex flex-col justify-end relative">
-      <div className={"absolute z-0 w-screen top-0 left-0 h-[25rem] relative"}>
+      <div className={"absolute z-0 w-screen top-0 left-0 h-[25rem]"}>
         <Image src={'/morph.gif'} alt={'progress of machine giff'} height={345} width={615} className={'object-contain absolute top-0 left-0'} />
       </div>
 
