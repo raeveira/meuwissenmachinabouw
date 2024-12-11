@@ -20,7 +20,7 @@ const POI = ({positionX, positionY, imageSrc, header, text}: { positionX: number
 
     return (
         <div
-            className={`h-[64px] w-[64px] absolute bg-yellow-400 rounded-xl hover:cursor-pointer`}
+            className={`h-[7vh] w-[3.5vw] absolute bg-yellow-400 rounded-xl hover:cursor-pointer`}
             style={{top: `${positionY}%`, left: `${positionX}%`}}>
             <HoverCard>
                 <HoverCardTrigger>

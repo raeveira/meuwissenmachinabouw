@@ -42,31 +42,30 @@ const InformationSection = () => {
             <section id={'drawing'}
                      className={`relative ${itim.className} w-screen h-screen overflow-hidden snap-start snap-always bg-[url("/front-page/design-and-engineering-materials-parallax-blue-1.jpg")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
                 <div
-                    className={'flex flex-col justify-center w-full text-5xl pt-5 items-center tracking-wide text-[#000000] relative z-[3] select-none'}>
+                    className={'flex flex-col justify-center w-full text-[2.5vw] pt-5 items-center tracking-wide text-[#000000] relative z-[3] select-none'}>
                     <h1 className={'relative'}>Het begint met een Tekening
-                        <span className={'absolute -right-[1.25rem] -top-2'}>
+                        <span className={'absolute -right-[3.5%]'}>
                         <Image src={'/front-page/marked.gif'} alt={'word highlighter'} width={224} height={96}
-                               className={'select-none pointer-events-none'}/>
+                               className={'select-none pointer-events-none w-[12vw] h-[8.2vh]'}/>
                     </span>
                     </h1>
                     <br/>
-                        <p className={'text-xl mt-[36px] text-white rounded-t-md bg-[#D34E3B] px-2'}>Ons speeldveld laat teamspelers
+                        <p className={'text-[1vw] mt-[36px] text-white rounded-t-md bg-[#D34E3B] px-2'}>Ons speeldveld laat teamspelers
                             lopen.</p>
-                        <p className={'text-xl text-white rounded-t-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei:
+                        <p className={'text-[1vw] text-white rounded-t-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei:
                             “Je
                             gaat
                             het pas zien als je het door hebt.”</p>
 
                 </div>
-                <div
-                    className="absolute z-[3] w-[65.35%] h-[39px] bg-[#EFC101] top-[28.7vh] left-[19vw] overflow-hidden select-none pointer-events-none">
-                    <ImageSlider
-                        images={images}/>
-                </div>
                 <div className={'w-screen h-screen -bottom-[4.35rem] absolute z-[2]'}>
-                <Image src={'/front-page/meeuwissen-2.4.png'} alt={'soccerfield'} fill={true}
+                    <Image src={'/front-page/meeuwissen-2.4.png'} alt={'soccerfield'} fill={true}
                            className={'object-cover select-none pointer-events-none max-desktop-sm:object-contain'}/>
-
+                    <div
+                        className="absolute z-[3] w-[65.28vw] h-[4.2vh] bg-[#EFC101] top-[21.1%] left-[19.05%] overflow-hidden select-none pointer-events-none">
+                        <ImageSlider
+                            images={images}/>
+                    </div>
                     {/* Left Side */}
                     {/* 5 */}
                     <POI positionX={39.8} positionY={26.6} imageSrc={'/POI/waterstraal.jpg'}
@@ -98,7 +97,7 @@ const InformationSection = () => {
 
                     {/* Middle */}
                     <div
-                        className={'absolute top-[46.85%] left-[51.75%] -translate-x-1/2 -translate-y-1/2 w-[16.5rem] h-32 rounded-[4rem] grid grid-cols-2 grid-rows-2 z-[5] hover:cursor-pointer'}>
+                        className={'absolute top-[46.85%] left-[51.75%] -translate-x-1/2 -translate-y-1/2 w-[14vw] h-[14vh] rounded-[4rem] grid grid-cols-2 grid-rows-2 z-[5] hover:cursor-pointer'}>
                         <div className={'rounded-tl-[4rem] relative group'}>
                             <HoverCard>
                                 <HoverCardTrigger>
@@ -180,11 +179,14 @@ const InformationSection = () => {
                             </HoverCard>
                         </div>
                     </div>
-                    <div className={'absolute bottom-[15.5rem] left-[55rem] z-[3]'}>
+                    <div className={'absolute bottom-[27%] left-[46%] z-[3]'}>
                         <HoverCard>
                             <HoverCardTrigger>
-                                <Image src={'/front-page/vrouweJustitia.png'} alt={'vrouwe justitia'} width={100}
-                                       height={100}/>
+                                <div className={'w-[7vw] h-[18vh]'}>
+                                    <Image src={'/front-page/vrouweJustitia.png'} alt={'vrouwe justitia'} fill={true}
+                                           className={'object-contain'}/>
+
+                                </div>
                             </HoverCardTrigger>
                             <HoverCardContent className={'mt-1 bg-yellow-400 border-yellow-300'}>
                                 <h2 className={'text-xl font-semibold'}>Voorwaarden</h2>
