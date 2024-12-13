@@ -68,17 +68,17 @@ const InformationSection = () => {
                     </div>
                     {/* Left Side */}
                     {/* 5 */}
-                    <POI positionX={39.8} positionY={26.6} imageSrc={'/POI/waterstraal.jpg'}
+                    <POI positionX={39.8} positionY={26.6} imageSrc={'/POI/waterstraalsnijder.png'}
                          header={'Waterstraalsnijmachine'}
                          text={'De waterstraalsnijmachine is een onmisbare schakel in ons bedrijf. Rechtstreeks vanuit onze engineeringssoftware snijden we diverse machinedelen, in matateriaaldiktes van 0.3 tot 60mm in de meest uiteenlopende materialen. Van constructiestaal, RVS, Mangaanstaal, Titanium en zelfs Zirkonium. Alsook buijn a alle kunststoffen.'}/>
                     {/* 6 */}
-                    <POI positionX={35.4} positionY={39.5} imageSrc={'/POI/freesbank.jpeg'} header={'CNC Freesmachine'}
+                    <POI positionX={35.4} positionY={39.5} imageSrc={'/POI/freesbank.png'} header={'CNC Freesmachine'}
                          text={'is een cnc freesmachine/ bewerkingscentrum een zeer belangrijke speler. In ons bedrijf wordt deze machine zowel aan de machine alsook vanaf afstand met het grootste gemak geprogrameerd voor enklestuks werk almede ookk serieproduktie.'}/>
                     {/* 7 */}
-                    <POI positionX={38} positionY={58} imageSrc={'/POI/draaibank.jpg'} header={'Draaibank'}
+                    <POI positionX={38} positionY={58} imageSrc={'/POI/draaibank.png'} header={'Draaibank'}
                          text={'Voor elk bedrijf in de mechanische techniek is een cnc draaibank uiteraard een basisspeler.'}/>
                     {/* 8 */}
-                    <POI positionX={24.6} positionY={49} imageSrc={'/POI/plaatwerk.jpg'} header={'Plaatwerk'}
+                    <POI positionX={24.6} positionY={49} imageSrc={'/POI/plaatwerk.png'} header={'Plaatwerk'}
                          text={'In onze engineering houden we er rekening mee dat we met plaatwerk dure lasbewerkingen kunnen vervangen door gezet plaatwerk'}/>
                     {/* 9 */}
                     <POI positionX={16.9} positionY={60.2} imageSrc={'/POI/robot.png'}
@@ -89,7 +89,7 @@ const InformationSection = () => {
                          header={'Werkplaatsuitrusting'}
                          text={'Werkplaatsuitrusting, zonder dat dit voor ons specialismes zijn, maar toch onmisbare competenties.'}/>
                     {/* 11 */}
-                    <POI positionX={28.8} positionY={27.4} imageSrc={'/POI/vervoer.jpeg'} header={'Transport'}
+                    <POI positionX={28.8} positionY={27.4} imageSrc={'/POI/vervoer.png'} header={'Transport'}
                          text={'Om onze flexibiliteit te ondersteunen, maken we gebruik van eigen transport tot 6000kg.'}/>
                     {/* 12 */}
                     <POI positionX={13.1} positionY={39} imageSrc={'/POI/yingyang.png'} header={'Doel'}

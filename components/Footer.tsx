@@ -9,19 +9,6 @@ export default function Footer() {
           id={'footer'}
           className="w-screen h-screen snap-start snap-always bg-white text-white flex flex-col justify-end relative">
         <div className={"absolute z-0 w-screen top-0 left-0 flex justify-between items-end h-full max-h-[665px] pt-10"}>
-          <Image src={'/morph.gif'} alt={'progress of machine giff'} height={345} width={615}
-                 className={'object-contain h-full w-auto max-w-[535px]'}/>
-          <p className={'text-base text-gray-900 pt-16 px-2 text-left font-normal h-full'}>
-            <span className={'font-medium text-lg'}>Opstelling</span><br/>
-            Waar de coach tijdens de opstelling de beste spelers op de juiste plek zet,
-            zo zetten wij van Meuwissen Machinebouw de beste technieken in om de wedstrijd
-            te winnen!
-            <br/><br/>
-            <span className={'font-medium text-lg'}>Winnaars</span><br/>
-            Wellicht heeft u hierboven al ontdekt hoe Meeuwissen Machinebouw het
-            voor elkaar krijgt om een wedstijd te spelen, waar 2 winnaars uitkomen.</p>
-          <Image src={'/morph2.gif'} alt={'progress of machine giff'} height={345} width={615}
-                 className={'object-contain h-full w-auto max-w-[535px]'}/>
           <Image src={'/front-page/design-and-engineering-materials-parallax-blue-1.jpg'} alt={'tekening achtergrond'} fill={true} className={'object-cover relative -z-[1] select-none pointer-events-none'}/>
         </div>
 
