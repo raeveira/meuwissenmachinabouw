@@ -1,5 +1,3 @@
-'use client'
-import {useState} from 'react';
 import {Itim} from "next/font/google";
 import Image from "next/image";
 import POI from "@/components/POI";
@@ -7,7 +5,7 @@ import POI2 from "@/components/POI2";
 import ImageSlider from "@/components/ImageSlider";
 import {HoverCard, HoverCardContent, HoverCardTrigger} from "@/components/ui/hover-card";
 import {Button} from "@/components/ui/button";
-import {ChevronRight, X} from "lucide-react";
+import {ChevronRight} from "lucide-react";
 import Link from "next/link";
 
 const itim = Itim({
@@ -31,12 +29,6 @@ const images = [
 
 
 const InformationSection = () => {
-    const [terms, setTerms] = useState<boolean>(false);
-
-    const showTerms = () => {
-        setTerms(!terms);
-    }
-
     return (
         <>
             <section id={'drawing'}
@@ -179,22 +171,29 @@ const InformationSection = () => {
                             </HoverCard>
                         </div>
                     </div>
-                    <div className={'absolute bottom-[27%] left-[46%] z-[3]'}>
+                    <div className={'absolute bottom-[24%] left-[43%] z-[3]'}>
                         <HoverCard>
-                            <HoverCardTrigger>
-                                <div className={'w-[7vw] h-[18vh]'}>
-                                    <Image src={'/front-page/vrouweJustitia.png'} alt={'vrouwe justitia'} fill={true}
+                            <HoverCardTrigger className={'hover:cursor-pointer'}>
+                                <div className={'w-[11vw] h-[22vh]'}>
+                                    <Image src={'/front-page/referee.png'} alt={'scheidsrechter'} fill={true}
                                            className={'object-contain'}/>
 
                                 </div>
                             </HoverCardTrigger>
-                            <HoverCardContent className={'mt-1 bg-yellow-400 border-yellow-300'}>
-                                <h2 className={'text-xl font-semibold'}>Voorwaarden</h2>
-                                <p className={'text-sm'}>
-                                    <Button variant={'link'} onClick={showTerms}>
-                                        Toon Voorwaarden
-                                    </Button>
-                                </p>
+                            <HoverCardContent className={'-mt-5 bg-yellow-400 border-yellow-300 w-auto'}>
+                                <div className={'flex flex-row max-h-[128px] gap-x-5'}>
+                                    <Image src={'/front-page/vrouweJustitia.png'} alt={'vrouwe justitia'} width={64} height={64} className={'w-auto max-h-[128px]'}/>
+                                    <p className={'border-r-2 border-amber-200 pr-5'}>Lorem ipsum</p>
+                                    <HoverCard>
+                                        <HoverCardTrigger className={'flex p-2 rounded-md py-3 max-h-5 items-center justify-center hover:cursor-pointer'}>
+                                                   Voorwaarden
+                                            <ChevronRight className={'h-4 w-4'}/>
+                                        </HoverCardTrigger>
+                                        <HoverCardContent className={'-mt-[17.5%] ml-[82%] bg-yellow-400 border-yellow-300'}>
+                                            voorwaarden gaan hier
+                                        </HoverCardContent>
+                                    </HoverCard>
+                                </div>
                             </HoverCardContent>
                         </HoverCard>
                     </div>
@@ -230,16 +229,6 @@ const InformationSection = () => {
                     </Link>
                 </div>
             </section>
-            {terms && (
-                <section className={'fixed top-0 left-0 w-screen h-screen p-10 z-50'}>
-                    <div className={'bg-white w-full h-full rounded-lg p-2 relative'}>
-                        Voorwaarden
-                        <Button variant={'ghost'} className={'absolute top-2 right-2'} onClick={showTerms}>
-                            <X size={24} color={'#000'}/>
-                        </Button>
-                    </div>
-                </section>
-            )}
         </>
     )
 };
