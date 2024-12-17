@@ -52,7 +52,7 @@ const FrontHeader = () => {
             </div>
             <div className={'absolute top-20 right-44'}>
                 <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio} className={'-rotate-[10deg] hover:scale-125 hover:rotate-[15deg] hover:cursor-pointer duration-300 transition-all'}/>
-                <Image src={'/arrow.png'} alt={'arrow point towards radio'} height={200} width={200} className={'absolute top-20 -left-44'} />
+                <Image src={'/pijl.png'} alt={'arrow point towards radio'} height={1200} width={600} className={'absolute top-[65%] -left-[150%] scale-[2]'} />
             </div>
             <div className={'absolute bottom-0 right-0'}>
                 <Link href={'#drawing'}>
