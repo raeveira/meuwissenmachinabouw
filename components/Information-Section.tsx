@@ -5,7 +5,7 @@ import POI2 from "@/components/POI2";
 import ImageSlider from "@/components/ImageSlider";
 import {HoverCard, HoverCardContent, HoverCardTrigger} from "@/components/ui/hover-card";
 import {Button} from "@/components/ui/button";
-import {ChevronRight} from "lucide-react";
+import {ChevronDown, ChevronRight} from "lucide-react";
 import Link from "next/link";
 
 const itim = Itim({
@@ -222,7 +222,7 @@ const InformationSection = () => {
                                 className="before:rounded-bl-[5px] rotate-90 relative scale-[4.5] pr-0 right-[60px] bottom-20 w-[50px] p-5 font-sans bg-no-repeat rounded-md before:content-[''] before:absolute before:top-0 before:right-0 before:w-[1.35em] before:h-[3.2em] before:bg-[linear-gradient(to_left_bottom,_transparent_50%,_#EFC101_0,_#FFE701_27px,_#9B7D00)] before:transform before:translate-x-[-0.8em] before:translate-y-[-0.73em] before:rotate-[-36.7deg] before:shadow-[0_6px_4px_-4px_#eedbd6]">
                                 <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center">
                                     <span
-                                        className={'mr-4 text-[3.5px] absolute top-[1px] left-[13px] -scale-x-[1]'}>DIEP GAAN</span>
+                                        className={'mr-4 text-[4.5px] absolute -top-[4px] left-[6px] -scale-x-[1] rotate-[60deg] flex items-center text-center flex-col'}>DIEP GAAN<ChevronDown size={6}/></span>
                                 </h2>
                             </div>
                         </div>
