@@ -67,8 +67,8 @@ const FrontHeader = () => {
                     </div>
                 </Link>
             </div>
-            <div className={'absolute bottom-[2%] right-[10%] max-w-[20%] h-auto -z-[1]'}>
-                <video src={'/front-page/volledige_morph_met_achtergrond.mp4'} className={'rounded-xl'} autoPlay={true} loop={true} />
+            <div className={'absolute bottom-[2%] right-[10%] max-w-[20%] h-auto z-[1] pointer-events-auto hover:-translate-y-1/4 hover:-translate-x-1/4 hover:scale-150 transition-all duration-300'}>
+                <video src={'/front-page/volledige_morph_met_achtergrond.mp4'} className={'rounded-xl'} autoPlay loop muted />
             </div>
         </header>
     );
