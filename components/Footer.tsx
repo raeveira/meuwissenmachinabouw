@@ -1,5 +1,5 @@
 import Link from "next/link"
-import {Mail, Video} from 'lucide-react'
+import {Mail} from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
 
