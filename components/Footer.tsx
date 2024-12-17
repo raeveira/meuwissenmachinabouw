@@ -9,8 +9,7 @@ export default function Footer() {
           id={'footer'}
           className="w-screen h-screen snap-start snap-always bg-white text-white flex flex-col justify-end relative">
         <div className={"absolute z-0 w-screen top-0 left-0 flex justify-between items-end h-full max-h-[665px] pt-10"}>
-          {/*<Image src={'/front-page/design-and-engineering-materials-parallax-blue-1.jpg'} alt={'tekening achtergrond'} fill={true} className={'object-cover relative -z-[1] select-none pointer-events-none'}/>*/}
-          <Video href={'/front-page/volledige_morph_met_achtergrond.mp4'} className={'object-cover relative -z-[1] select-none pointer-events-none'}  />
+          <Image src={'/front-page/design-and-engineering-materials-parallax-blue-1.jpg'} alt={'tekening achtergrond'} fill={true} className={'object-cover relative -z-[1] select-none pointer-events-none'}/>
         </div>
 
         {/* Main Footer Content */}

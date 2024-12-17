@@ -67,6 +67,9 @@ const FrontHeader = () => {
                     </div>
                 </Link>
             </div>
+            <div className={'absolute bottom-[2%] right-[10%] max-w-[20%] h-auto -z-[1]'}>
+                <video src={'/front-page/volledige_morph_met_achtergrond.mp4'} className={'rounded-xl'} autoPlay={true} loop={true} />
+            </div>
         </header>
     );
 };
