@@ -37,7 +37,7 @@ const InformationSection = () => {
                     className={'flex flex-col justify-center w-full text-[2.5vw] pt-5 items-center tracking-wide text-[#000000] relative z-[3] select-none'}>
                     <h1 className={'relative'}>Het begint met een Tekening
                         <span className={'absolute -right-[3.5%]'}>
-                        <Image src={'/front-page/marked.gif'} alt={'word highlighter'} width={224} height={96}
+                        <Image src={'/front-page/marked.gif'} alt={'word highlighter'} width={224} height={96} unoptimized={true}
                                className={'select-none pointer-events-none w-[12vw] h-[8.2vh]'}/>
                     </span>
                     </h1>
@@ -51,7 +51,7 @@ const InformationSection = () => {
 
                 </div>
                 <div className={'w-screen h-screen -bottom-[4.35rem] absolute z-[2]'}>
-                    <Image src={'/front-page/meeuwissen-2.4.png'} alt={'soccerfield'} fill={true}
+                    <Image src={'/front-page/meeuwissen-2.6.png'} alt={'soccerfield'} fill={true}
                            className={'object-cover select-none pointer-events-none max-desktop-sm:object-contain'}/>
                     <div
                         className="absolute z-[3] w-[65.28vw] h-[4.2vh] bg-[#EFC101] top-[21.1%] left-[19.05%] overflow-hidden select-none pointer-events-none">
