@@ -7,6 +7,7 @@ import {HoverCard, HoverCardContent, HoverCardTrigger} from "@/components/ui/hov
 import {Button} from "@/components/ui/button";
 import {ChevronDown, ChevronRight} from "lucide-react";
 import Link from "next/link";
+import {useEffect, useState} from "react";
 
 const itim = Itim({
     weight: "400",
@@ -15,20 +16,15 @@ const itim = Itim({
     subsets: ["latin"],
 });
 
-const images = [
-    '/partners/Lipro.JPG',
-    '/partners/Marel.JPG',
-    '/partners/Mazon.JPG',
-    '/partners/Rockwool.JPG',
-    '/partners/Seki Sui Jushi.JPG',
-    '/partners/Smurfit Kappa Roermond papier.JPG',
-    '/partners/Stork.JPG',
-    '/partners/Vekoma.JPG',
-    '/partners/Xella.JPG',
-]
-
-
 const InformationSection = () => {
+    const [images, setImages] = useState<string[]>([]);
+
+    useEffect(() => {
+        fetch('/api/partners')
+            .then(response => response.json())
+            .then(data => setImages(data));
+    }, []);
+
     return (
         <>
             <section id={'drawing'}
