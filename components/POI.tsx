@@ -20,12 +20,12 @@ const POI = ({positionX, positionY, imageSrc, header, text}: { positionX: number
 
     return (
         <div
-            className={`h-[7vh] w-[3.5vw] absolute bg-yellow-400 rounded-xl hover:cursor-pointer`}
+            className={`h-[7vh] w-[3.5vw] absolute rounded-xl hover:cursor-pointer`}
             style={{top: `${positionY}%`, left: `${positionX}%`}}>
             <HoverCard>
                 <HoverCardTrigger>
                     <div
-                        className={'h-[16px] w-[16px] rotate-45 rounded-[10px] absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-yellow-400'}/>
+                        className={'h-[16px] w-[16px] rotate-45 rounded-[10px] absolute -bottom-1.5 left-1/2 -translate-x-1/2'}/>
                     <div className={'w-full h-full flex items-center justify-center select-none'}>
                         <Image src={imageSrc} alt={header} fill={true} className={'object-fill rounded-[10px] z-[0] relative'}/>
                     </div>

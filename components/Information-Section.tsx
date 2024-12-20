@@ -8,6 +8,7 @@ import {Button} from "@/components/ui/button";
 import {ChevronDown, ChevronRight} from "lucide-react";
 import Link from "next/link";
 import {useEffect, useState} from "react";
+import {EditableText} from "@/components/EditableText";
 
 const itim = Itim({
     weight: "400",
@@ -18,6 +19,10 @@ const itim = Itim({
 
 const InformationSection = () => {
     const [images, setImages] = useState<string[]>([]);
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [title, setTitle] = useState("Het begint met een Tekening");
+    const [subtitle1, setSubtitle1] = useState("Ons speeldveld laat teamspelers lopen.");
+    const [subtitle2, setSubtitle2] = useState("Zoals Johan Cruijff ooit zei: \"Je gaat het pas zien als je het door hebt.\"");
 
     useEffect(() => {
         fetch('/api/partners')
@@ -31,20 +36,44 @@ const InformationSection = () => {
                      className={`relative ${itim.className} w-screen h-screen overflow-hidden snap-start snap-always bg-[url("/front-page/design-and-engineering-materials-parallax-blue-1.jpg")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
                 <div
                     className={'flex flex-col justify-center w-full text-[2.5vw] pt-5 items-center tracking-wide text-[#000000] relative z-[3] select-none'}>
-                    <h1 className={'relative'}>Het begint met een Tekening
+                    <h1 className={'relative'}>
+                        {loggedIn ? (
+                            <EditableText
+                                initialText={title}
+                                onSave={setTitle}
+                                className=""
+                            />
+                        ) : (
+                            title
+                        )}
                         <span className={'absolute -right-[3.5%]'}>
-                        <Image src={'/front-page/marked.gif'} alt={'word highlighter'} width={224} height={96} unoptimized={true}
-                               className={'select-none pointer-events-none w-[12vw] h-[8.2vh]'}/>
-                    </span>
+            <Image src={'/front-page/marked.gif'} alt={'word highlighter'} width={224} height={96} unoptimized={true}
+                   className={'select-none pointer-events-none w-[12vw] h-[8.2vh]'}/>
+          </span>
                     </h1>
                     <br/>
-                        <p className={'text-[1vw] mt-[36px] text-white rounded-t-md bg-[#D34E3B] px-2'}>Ons speeldveld laat teamspelers
-                            lopen.</p>
-                        <p className={'text-[1vw] text-white rounded-t-md bg-[#D34E3B] px-2'}>Zoals Johan Cruijff ooit zei:
-                            “Je
-                            gaat
-                            het pas zien als je het door hebt.”</p>
-
+                    <div className={'text-[1vw] mt-[36px] text-white rounded-t-md bg-[#D34E3B] px-2'}>
+                        {loggedIn ? (
+                            <EditableText
+                                initialText={subtitle1}
+                                onSave={setSubtitle1}
+                                className="bg-transparent"
+                            />
+                        ) : (
+                            subtitle1
+                        )}
+                    </div>
+                    <div className={'text-[1vw] text-white rounded-t-md bg-[#D34E3B] px-2'}>
+                        {loggedIn ? (
+                            <EditableText
+                                initialText={subtitle2}
+                                onSave={setSubtitle2}
+                                className="bg-transparent"
+                            />
+                        ) : (
+                            subtitle2
+                        )}
+                    </div>
                 </div>
                 <div className={'w-screen h-screen -bottom-[4.35rem] absolute z-[2]'}>
                     <Image src={'/front-page/meeuwissen-2.6.png'} alt={'soccerfield'} fill={true}
@@ -178,14 +207,17 @@ const InformationSection = () => {
                             </HoverCardTrigger>
                             <HoverCardContent className={'-mt-5 bg-yellow-400 border-yellow-300 w-auto'}>
                                 <div className={'flex flex-row max-h-[128px] gap-x-5'}>
-                                    <Image src={'/front-page/vrouweJustitia.png'} alt={'vrouwe justitia'} width={64} height={64} className={'w-auto max-h-[128px]'}/>
+                                    <Image src={'/front-page/vrouweJustitia.png'} alt={'vrouwe justitia'} width={64}
+                                           height={64} className={'w-auto max-h-[128px]'}/>
                                     <p className={'border-r-2 border-amber-200 pr-5'}>Lorem ipsum</p>
                                     <HoverCard>
-                                        <HoverCardTrigger className={'flex p-2 rounded-md py-3 max-h-5 items-center justify-center hover:cursor-pointer'}>
-                                                   Voorwaarden
+                                        <HoverCardTrigger
+                                            className={'flex p-2 rounded-md py-3 max-h-5 items-center justify-center hover:cursor-pointer'}>
+                                            Voorwaarden
                                             <ChevronRight className={'h-4 w-4'}/>
                                         </HoverCardTrigger>
-                                        <HoverCardContent className={'-mt-[17.5%] ml-[82%] bg-yellow-400 border-yellow-300'}>
+                                        <HoverCardContent
+                                            className={'-mt-[17.5%] ml-[82%] bg-yellow-400 border-yellow-300'}>
                                             voorwaarden gaan hier
                                         </HoverCardContent>
                                     </HoverCard>
@@ -218,7 +250,8 @@ const InformationSection = () => {
                                 className="before:rounded-bl-[5px] rotate-90 relative scale-[4.5] pr-0 right-[60px] bottom-20 w-[50px] p-5 font-sans bg-no-repeat rounded-md before:content-[''] before:absolute before:top-0 before:right-0 before:w-[1.35em] before:h-[3.2em] before:bg-[linear-gradient(to_left_bottom,_transparent_50%,_#EFC101_0,_#FFE701_27px,_#9B7D00)] before:transform before:translate-x-[-0.8em] before:translate-y-[-0.73em] before:rotate-[-36.7deg] before:shadow-[0_6px_4px_-4px_#eedbd6]">
                                 <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center">
                                     <span
-                                        className={'mr-4 text-[4.5px] absolute -top-[4px] left-[6px] -scale-x-[1] rotate-[60deg] flex items-center text-center flex-col'}>DIEP GAAN<ChevronDown size={6}/></span>
+                                        className={'mr-4 text-[4.5px] absolute -top-[4px] left-[6px] -scale-x-[1] rotate-[60deg] flex items-center text-center flex-col'}>DIEP GAAN<ChevronDown
+                                        size={6}/></span>
                                 </h2>
                             </div>
                         </div>
