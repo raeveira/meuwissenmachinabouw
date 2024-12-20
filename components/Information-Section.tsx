@@ -23,6 +23,17 @@ const InformationSection = () => {
     const [title, setTitle] = useState("Het begint met een Tekening");
     const [subtitle1, setSubtitle1] = useState("Ons speeldveld laat teamspelers lopen.");
     const [subtitle2, setSubtitle2] = useState("Zoals Johan Cruijff ooit zei: \"Je gaat het pas zien als je het door hebt.\"");
+    const [pois, setPois] = useState([
+        { id: 1, positionX: 39.8, positionY: 26.6, imageSrc: '/POI/waterstraalsnijder.png', header: 'Waterstraalsnijmachine', text: 'De waterstraalsnijmachine is een onmisbare schakel in ons bedrijf. Rechtstreeks vanuit onze engineeringssoftware snijden we diverse machinedelen, in matateriaaldiktes van 0.3 tot 60mm in de meest uiteenlopende materialen. Van constructiestaal, RVS, Mangaanstaal, Titanium en zelfs Zirkonium. Alsook buijn a alle kunststoffen.' },
+        { id: 2, positionX: 35.4, positionY: 39.5, imageSrc: '/POI/freesbank.png', header: 'CNC Freesmachine', text: 'is een cnc freesmachine/ bewerkingscentrum een zeer belangrijke speler. In ons bedrijf wordt deze machine zowel aan de machine alsook vanaf afstand met het grootste gemak geprogrameerd voor enklestuks werk almede ookk serieproduktie.' },
+        { id: 3, positionX: 38, positionY: 58, imageSrc: '/POI/draaibank.png', header: 'Draaibank', text: 'Voor elk bedrijf in de mechanische techniek is een cnc draaibank uiteraard een basisspeler.' },
+        { id: 4, positionX: 24.6, positionY: 49, imageSrc: '/POI/plaatwerk.png', header: 'Plaatwerk', text: 'In onze engineering houden we er rekening mee dat we met plaatwerk dure lasbewerkingen kunnen vervangen door gezet plaatwerk' },
+        { id: 5, positionX: 16.9, positionY: 60.2, imageSrc: '/POI/robot.png', header: 'robotfirma en machinebouw', text: 'Om het gat in mogelijkheden te dichten tussen robotfirma en machinebouwer zijn we gestart het de kennis over robottechniek in eigen huis te nemen.' },
+        { id: 6, positionX: 10, positionY: 55, imageSrc: '/POI/werkplaatsuitrusting.jpeg', header: 'Werkplaatsuitrusting', text: 'Werkplaatsuitrusting, zonder dat dit voor ons specialismes zijn, maar toch onmisbare competenties.' },
+        { id: 7, positionX: 28.8, positionY: 27.4, imageSrc: '/POI/vervoer.png', header: 'Transport', text: 'Om onze flexibiliteit te ondersteunen, maken we gebruik van eigen transport tot 6000kg.' },
+        { id: 8, positionX: 13.1, positionY: 39, imageSrc: '/POI/yingyang.png', header: 'Doel', text: 'Het niet materiele doel van werk hebben we ook hoog in het vaandel staan.' }
+    ]);
+
 
     useEffect(() => {
         fetch('/api/partners')
@@ -30,8 +41,12 @@ const InformationSection = () => {
             .then(data => setImages(data));
     }, []);
 
+    const updatePoi = (id: number, field: string, value: string): void => {
+        setPois(pois.map(poi => poi.id === id ? { ...poi, [field]: value } : poi));
+    };
+
     useEffect(() => {
-        setLoggedIn(true)
+        setLoggedIn(false)
     }, []);
 
     return (
@@ -89,32 +104,36 @@ const InformationSection = () => {
                     </div>
                     {/* Left Side */}
                     {/* 5 */}
-                    <POI positionX={39.8} positionY={26.6} imageSrc={'/POI/waterstraalsnijder.png'}
-                         header={'Waterstraalsnijmachine'}
-                         text={'De waterstraalsnijmachine is een onmisbare schakel in ons bedrijf. Rechtstreeks vanuit onze engineeringssoftware snijden we diverse machinedelen, in matateriaaldiktes van 0.3 tot 60mm in de meest uiteenlopende materialen. Van constructiestaal, RVS, Mangaanstaal, Titanium en zelfs Zirkonium. Alsook buijn a alle kunststoffen.'}/>
-                    {/* 6 */}
-                    <POI positionX={35.4} positionY={39.5} imageSrc={'/POI/freesbank.png'} header={'CNC Freesmachine'}
-                         text={'is een cnc freesmachine/ bewerkingscentrum een zeer belangrijke speler. In ons bedrijf wordt deze machine zowel aan de machine alsook vanaf afstand met het grootste gemak geprogrameerd voor enklestuks werk almede ookk serieproduktie.'}/>
-                    {/* 7 */}
-                    <POI positionX={38} positionY={58} imageSrc={'/POI/draaibank.png'} header={'Draaibank'}
-                         text={'Voor elk bedrijf in de mechanische techniek is een cnc draaibank uiteraard een basisspeler.'}/>
-                    {/* 8 */}
-                    <POI positionX={24.6} positionY={49} imageSrc={'/POI/plaatwerk.png'} header={'Plaatwerk'}
-                         text={'In onze engineering houden we er rekening mee dat we met plaatwerk dure lasbewerkingen kunnen vervangen door gezet plaatwerk'}/>
-                    {/* 9 */}
-                    <POI positionX={16.9} positionY={60.2} imageSrc={'/POI/robot.png'}
-                         header={'robotfirma en machinebouw'}
-                         text={'Om het gat in mogelijkheden te dichten tussen robotfirma en machinebouwer zijn we gestart het de kennis over robottechniek in eigen huis te nemen.'}/>
-                    {/* 10 */}
-                    <POI positionX={10} positionY={55} imageSrc={'/POI/werkplaatsuitrusting.jpeg'}
-                         header={'Werkplaatsuitrusting'}
-                         text={'Werkplaatsuitrusting, zonder dat dit voor ons specialismes zijn, maar toch onmisbare competenties.'}/>
-                    {/* 11 */}
-                    <POI positionX={28.8} positionY={27.4} imageSrc={'/POI/vervoer.png'} header={'Transport'}
-                         text={'Om onze flexibiliteit te ondersteunen, maken we gebruik van eigen transport tot 6000kg.'}/>
-                    {/* 12 */}
-                    <POI positionX={13.1} positionY={39} imageSrc={'/POI/yingyang.png'} header={'Doel'}
-                         text={'Het niet materiele doel van werk hebben we ook hoog in het vaandel staan.'}/>
+                    {pois.map(poi => (
+                        <POI
+                            key={poi.id}
+                            positionX={poi.positionX}
+                            positionY={poi.positionY}
+                            imageSrc={poi.imageSrc}
+                            header={
+                                loggedIn ? (
+                                    <EditableText
+                                        initialText={poi.header}
+                                        onSave={(value) => updatePoi(poi.id, 'header', value)}
+                                        className="bg-transparent"
+                                    />
+                                ) : (
+                                    poi.header
+                                )
+                            }
+                            text={
+                                loggedIn ? (
+                                    <EditableText
+                                        initialText={poi.text}
+                                        onSave={(value) => updatePoi(poi.id, 'text', value)}
+                                        className="bg-transparent"
+                                    />
+                                ) : (
+                                    poi.text
+                                )
+                            }
+                        />
+                    ))}
 
                     {/* Middle */}
                     <div
@@ -127,75 +146,203 @@ const InformationSection = () => {
                                 </HoverCardTrigger>
                                 <HoverCardContent
                                     className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
-                                    <h1 className={'text-2xl font-semibold'}>Software</h1>
-                                    <p className={'text-sm'}>Voor onze engineering maken wij gebruik van 3d software,
-                                        waar tevens de werkplaatstekeningen in aangemaakt worden, als ook animaties,
-                                        sterkte berekeningen, en eventueel een bill off material export naar ons erp
-                                        systeem.</p>
+                                    {loggedIn ? (
+                                        <>
+                                            <EditableText
+                                                initialText="Software"
+                                                onSave={(value) => console.log("Software header updated:", value)}
+                                                className="text-2xl font-semibold"
+                                            />
+                                            <EditableText
+                                                initialText="Voor onze engineering maken wij gebruik van 3d software, waar tevens de werkplaatstekeningen in aangemaakt worden, als ook animaties, sterkte berekeningen, en eventueel een bill off material export naar ons erp systeem."
+                                                onSave={(value) => console.log("Software text updated:", value)}
+                                                className="text-sm"
+                                            />
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h1 className={'text-2xl font-semibold'}>Software</h1>
+                                            <p className={'text-sm'}>Voor onze engineering maken wij gebruik van 3d
+                                                software, waar tevens de werkplaatstekeningen in aangemaakt worden, als
+                                                ook animaties, sterkte berekeningen, en eventueel een bill off material
+                                                export naar ons erp systeem.</p>
+                                        </>
+                                    )}
                                 </HoverCardContent>
                             </HoverCard>
                         </div>
                         <div className={'rounded-tr-[4rem] relative group'}>
                             <HoverCard>
                                 <HoverCardTrigger>
-                                    <Image src={'/front-page/lisaas.png'} alt={''} fill={true}
-                                           className={'object-cover rounded-tr-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                                    <Image
+                                        src={'/front-page/lisaas.png'}
+                                        alt={''}
+                                        fill={true}
+                                        className={
+                                            'object-cover rounded-tr-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
+                                        }
+                                    />
                                 </HoverCardTrigger>
                                 <HoverCardContent
-                                    className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
-                                    <h1 className={'text-2xl font-semibold'}>ERP Systeem</h1>
-                                    <p className={'text-sm'}>in een multidiciplinair bedrijf is het van belang een goede
-                                        organisatie struktuur te hebben door middel Enterprice Recource Planning, zodat
-                                        urenboekingen, inkopen, verkopen volgens een bepaalde standaard verlopen.</p>
+                                    className={
+                                        'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
+                                    }
+                                >
+                                    {loggedIn ? (
+                                        <>
+                                            <EditableText
+                                                initialText="ERP Systeem"
+                                                onSave={(value) => console.log('ERP Systeem header updated:', value)}
+                                                className="text-2xl font-semibold"
+                                            />
+                                            <EditableText
+                                                initialText="In een multidiciplinair bedrijf is het van belang een goede organisatie structuur te hebben door middel van Enterprise Resource Planning, zodat urenboekingen, inkopen, verkopen volgens een bepaalde standaard verlopen."
+                                                onSave={(value) => console.log('ERP Systeem text updated:', value)}
+                                                className="text-sm"
+                                            />
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h1 className={'text-2xl font-semibold'}>ERP Systeem</h1>
+                                            <p className={'text-sm'}>
+                                                In een multidiciplinair bedrijf is het van belang een goede organisatie
+                                                structuur te hebben door middel van
+                                                Enterprise Resource Planning, zodat urenboekingen, inkopen, verkopen
+                                                volgens
+                                                een bepaalde standaard verlopen.
+                                            </p>
+                                        </>
+                                    )}
                                 </HoverCardContent>
                             </HoverCard>
                         </div>
                         <div className={'rounded-bl-[4rem] relative group'}>
                             <HoverCard>
                                 <HoverCardTrigger>
-                                    <Image src={'/front-page/sterkte berekening.jpeg'} alt={''} fill={true}
-                                           className={'object-cover rounded-bl-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                                    <Image
+                                        src={'/front-page/sterkte berekening.jpeg'}
+                                        alt={''}
+                                        fill={true}
+                                        className={
+                                            'object-cover rounded-bl-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
+                                        }
+                                    />
                                 </HoverCardTrigger>
                                 <HoverCardContent
-                                    className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
-                                    <h1 className={'text-2xl font-semibold'}>Berekeningen</h1>
-                                    <p className={'text-sm'}>Om onze ontwerpen te optimaliseren, of inzichtelijk te
-                                        maken,
-                                        maken we oa gebruik van CAE berekeningen.</p>
+                                    className={
+                                        'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
+                                    }
+                                >
+                                    {loggedIn ? (
+                                        <>
+                                            <EditableText
+                                                initialText="Berekeningen"
+                                                onSave={(value) => console.log('Berekeningen header updated:', value)}
+                                                className="text-2xl font-semibold"
+                                            />
+                                            <EditableText
+                                                initialText="Om onze ontwerpen te optimaliseren of inzichtelijk te maken, maken we gebruik van CAE berekeningen."
+                                                onSave={(value) => console.log('Berekeningen text updated:', value)}
+                                                className="text-sm"
+                                            />
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h1 className={'text-2xl font-semibold'}>Berekeningen</h1>
+                                            <p className={'text-sm'}>
+                                                Om onze ontwerpen te optimaliseren of inzichtelijk te maken, maken we
+                                                gebruik van CAE berekeningen.
+                                            </p>
+                                        </>
+                                    )}
                                 </HoverCardContent>
                             </HoverCard>
                         </div>
                         <div className={'rounded-br-[4rem] relative group'}>
                             <HoverCard>
                                 <HoverCardTrigger>
-                                    <Image src={'/front-page/E-plan.png'} alt={''} fill={true}
-                                           className={'object-cover rounded-br-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                                    <Image
+                                        src={'/front-page/E-plan.png'}
+                                        alt={''}
+                                        fill={true}
+                                        className={
+                                            'object-cover rounded-br-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
+                                        }
+                                    />
                                 </HoverCardTrigger>
                                 <HoverCardContent
-                                    className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
-                                    <h1 className={'text-2xl font-semibold'}>E-Plan</h1>
-                                    <p className={'text-sm'}>voor de E-engineering werken wij met het algemeen gebruikte
-                                        programma E-plan.</p>
-                                    <HoverCard>
-                                        <HoverCardTrigger>
-                                            <Button
-                                                variant="outline"
-                                                className="mt-2 bg-yellow-500 text-black hover:bg-yellow-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105 font-semibold"
-                                            >
-                                                Schema&apos;s
-                                                <ChevronRight className="ml-2 h-4 w-4"/>
-                                            </Button>
-                                        </HoverCardTrigger>
-                                        <HoverCardContent
-                                            className={'-mb-[3.25rem] ml-[46.25rem] bg-yellow-400 border-yellow-300 w-96'}>
-                                            <div className={'grid grid-rows-1 grid-cols-[auto]'}>
-                                                <Image src={'/POI/EPLAN-Afdrukopdracht.png'} alt={'e-plan schema'}
-                                                       width={2339} height={1653}
-                                                       className={'hover:scale-150 rounded-md'}/>
-                                            </div>
-                                        </HoverCardContent>
-                                    </HoverCard>
-
+                                    className={
+                                        'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
+                                    }
+                                >
+                                    {loggedIn ? (
+                                        <>
+                                            <EditableText
+                                                initialText="E-Plan"
+                                                onSave={(value) => console.log('E-Plan header updated:', value)}
+                                                className="text-2xl font-semibold"
+                                            />
+                                            <EditableText
+                                                initialText="Voor de E-engineering werken wij met het algemeen gebruikte programma E-plan."
+                                                onSave={(value) => console.log('E-Plan text updated:', value)}
+                                                className="text-sm"
+                                            />
+                                            <HoverCard>
+                                                <HoverCardTrigger>
+                                                    <Button
+                                                        variant="outline"
+                                                        className="mt-2 bg-yellow-500 text-black hover:bg-yellow-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105 font-semibold"
+                                                    >
+                                                        Schema&apos;s
+                                                        <ChevronRight className="ml-2 h-4 w-4"/>
+                                                    </Button>
+                                                </HoverCardTrigger>
+                                                <HoverCardContent
+                                                    className={
+                                                        '-mb-[3.25rem] ml-[46.25rem] bg-yellow-400 border-yellow-300 w-96'
+                                                    }
+                                                >
+                                                    <div className={'grid grid-rows-1 grid-cols-[auto]'}>
+                                                        <Image
+                                                            src={'/POI/EPLAN-Afdrukopdracht.png'}
+                                                            alt={'e-plan schema'}
+                                                            width={2339}
+                                                            height={1653}
+                                                            className={'hover:scale-150 rounded-md'}
+                                                        />
+                                                    </div>
+                                                </HoverCardContent>
+                                            </HoverCard>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h1 className={'text-2xl font-semibold'}>E-Plan</h1>
+                                            <p className={'text-sm'}>
+                                                Voor de E-engineering werken wij met het algemeen gebruikte programma
+                                                E-plan.
+                                            </p>
+                                            {/* Keep the Schema's button static */}
+                                            <HoverCard>
+                                                <HoverCardTrigger>
+                                                    <Button
+                                                        variant="outline"
+                                                        className="mt-2 bg-yellow-500 text-black hover:bg-yellow-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105 font-semibold"
+                                                    >
+                                                        Schema&apos;s
+                                                        <ChevronRight className="ml-2 h-4 w-4"/>
+                                                    </Button>
+                                                </HoverCardTrigger>
+                                                <HoverCardContent
+                                                    className={'-mb-[3.25rem] ml-[46.25rem] bg-yellow-400 border-yellow-300 w-96'}>
+                                                    <div className={'grid grid-rows-1 grid-cols-[auto]'}>
+                                                        <Image src={'/POI/EPLAN-Afdrukopdracht.png'} alt={'e-plan schema'}
+                                                               width={2339} height={1653}
+                                                               className={'hover:scale-150 rounded-md'}/>
+                                                    </div>
+                                                </HoverCardContent>
+                                            </HoverCard>
+                                        </>
+                                    )}
                                 </HoverCardContent>
                             </HoverCard>
                         </div>
@@ -204,31 +351,57 @@ const InformationSection = () => {
                         <HoverCard>
                             <HoverCardTrigger className={'hover:cursor-pointer'}>
                                 <div className={'w-[11vw] h-[22vh]'}>
-                                    <Image src={'/front-page/referee.png'} alt={'scheidsrechter'} fill={true}
-                                           className={'object-contain'}/>
-
+                                    <Image
+                                        src={'/front-page/referee.png'}
+                                        alt={'scheidsrechter'}
+                                        fill={true}
+                                        className={'object-contain'}
+                                    />
                                 </div>
                             </HoverCardTrigger>
                             <HoverCardContent className={'-mt-5 bg-yellow-400 border-yellow-300 w-auto'}>
                                 <div className={'flex flex-row max-h-[128px] gap-x-5'}>
-                                    <Image src={'/front-page/vrouweJustitia.png'} alt={'vrouwe justitia'} width={64}
-                                           height={64} className={'w-auto max-h-[128px]'}/>
-                                    <p className={'border-r-2 border-amber-200 pr-5'}>Lorem ipsum</p>
+                                    <Image
+                                        src={'/front-page/vrouweJustitia.png'}
+                                        alt={'vrouwe justitia'}
+                                        width={64}
+                                        height={64}
+                                        className={'w-auto max-h-[128px]'}
+                                    />
+                                    {loggedIn ? (
+                                        <EditableText
+                                            initialText="Lorem ipsum"
+                                            onSave={(value) => console.log('Referee text updated:', value)}
+                                            className="border-r-2 border-amber-200 pr-5"
+                                        />
+                                    ) : (
+                                        <p className={'border-r-2 border-amber-200 pr-5'}>Lorem ipsum</p>
+                                    )}
                                     <HoverCard>
                                         <HoverCardTrigger
-                                            className={'flex p-2 rounded-md py-3 max-h-5 items-center justify-center hover:cursor-pointer'}>
+                                            className={'flex p-2 rounded-md py-3 max-h-5 items-center justify-center hover:cursor-pointer'}
+                                        >
                                             Voorwaarden
                                             <ChevronRight className={'h-4 w-4'}/>
                                         </HoverCardTrigger>
                                         <HoverCardContent
                                             className={'-mt-[17.5%] ml-[82%] bg-yellow-400 border-yellow-300'}>
-                                            voorwaarden gaan hier
+                                            {loggedIn ? (
+                                                <EditableText
+                                                    initialText="voorwaarden gaan hier"
+                                                    onSave={(value) => console.log('Voorwaarden text updated:', value)}
+                                                    className="bg-transparent"
+                                                />
+                                            ) : (
+                                                'voorwaarden gaan hier'
+                                            )}
                                         </HoverCardContent>
                                     </HoverCard>
                                 </div>
                             </HoverCardContent>
                         </HoverCard>
                     </div>
+
 
                     {/* Right Side */}
                     <POI2 positionX={55.6} positionY={58.7} imageSrc={'/POI/product1.jpg'} header={''}
@@ -252,7 +425,7 @@ const InformationSection = () => {
                         >
                             <div
                                 className="before:rounded-bl-[5px] rotate-90 relative scale-[4.5] pr-0 right-[60px] bottom-20 w-[50px] p-5 font-sans bg-no-repeat rounded-md before:content-[''] before:absolute before:top-0 before:right-0 before:w-[1.35em] before:h-[3.2em] before:bg-[linear-gradient(to_left_bottom,_transparent_50%,_#EFC101_0,_#FFE701_27px,_#9B7D00)] before:transform before:translate-x-[-0.8em] before:translate-y-[-0.73em] before:rotate-[-36.7deg] before:shadow-[0_6px_4px_-4px_#eedbd6]">
-                                <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center">
+                            <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center">
                                     <span
                                         className={'mr-4 text-[4.5px] absolute -top-[4px] left-[6px] -scale-x-[1] rotate-[60deg] flex items-center text-center flex-col'}>DIEP GAAN<ChevronDown
                                         size={6}/></span>
