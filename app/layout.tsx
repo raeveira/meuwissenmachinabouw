@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {Montserrat} from "next/font/google";
 import "./globals.css";
 import React from "react";
+import { Toaster } from "@/components/ui/sonner"
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -26,6 +27,7 @@ export default function RootLayout({
         className={`${montserrat.className} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
