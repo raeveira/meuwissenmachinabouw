@@ -30,7 +30,9 @@ const InformationSection = () => {
             .then(data => setImages(data));
     }, []);
 
-    setLoggedIn(true)
+    useEffect(() => {
+        setLoggedIn(true)
+    }, []);
 
     return (
         <>
