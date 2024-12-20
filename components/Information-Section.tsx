@@ -30,6 +30,8 @@ const InformationSection = () => {
             .then(data => setImages(data));
     }, []);
 
+    setLoggedIn(true)
+
     return (
         <>
             <section id={'drawing'}

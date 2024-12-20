@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PencilLine, Save } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export const EditableText = ({ initialText, onSave, className }: {initialText: string, onSave: Function, className: string}) => {
+export const EditableText = ({ initialText, onSave, className }: {initialText: string, onSave: (text: string) => void, className: string}) => {
     const [editing, setEditing] = useState(false);
     const [text, setText] = useState(initialText);
 
