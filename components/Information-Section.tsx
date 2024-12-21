@@ -9,6 +9,7 @@ import {ChevronDown, ChevronRight} from "lucide-react";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {EditableText} from "@/components/EditableText";
+import {getDynamicData, getPois, updateDynamicData, updateSinglePoi} from "@/prisma/script";
 
 const itim = Itim({
     weight: "400",
@@ -17,22 +18,56 @@ const itim = Itim({
     subsets: ["latin"],
 });
 
-const InformationSection = () => {
+type POIProps = {
+    id: number;
+    positionX: number;
+    positionY: number;
+    imageSrc: string;
+    header: string;
+    text: string;
+}
+
+type contentProps = {
+    id: number;
+    type: string;
+    content: string;
+} | undefined;
+
+const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
     const [images, setImages] = useState<string[]>([]);
-    const [loggedIn, setLoggedIn] = useState(false);
-    const [title, setTitle] = useState("Het begint met een Tekening");
-    const [subtitle1, setSubtitle1] = useState("Ons speeldveld laat teamspelers lopen.");
-    const [subtitle2, setSubtitle2] = useState("Zoals Johan Cruijff ooit zei: \"Je gaat het pas zien als je het door hebt.\"");
-    const [pois, setPois] = useState([
-        { id: 1, positionX: 39.8, positionY: 26.6, imageSrc: '/POI/waterstraalsnijder.png', header: 'Waterstraalsnijmachine', text: 'De waterstraalsnijmachine is een onmisbare schakel in ons bedrijf. Rechtstreeks vanuit onze engineeringssoftware snijden we diverse machinedelen, in matateriaaldiktes van 0.3 tot 60mm in de meest uiteenlopende materialen. Van constructiestaal, RVS, Mangaanstaal, Titanium en zelfs Zirkonium. Alsook buijn a alle kunststoffen.' },
-        { id: 2, positionX: 35.4, positionY: 39.5, imageSrc: '/POI/freesbank.png', header: 'CNC Freesmachine', text: 'is een cnc freesmachine/ bewerkingscentrum een zeer belangrijke speler. In ons bedrijf wordt deze machine zowel aan de machine alsook vanaf afstand met het grootste gemak geprogrameerd voor enklestuks werk almede ookk serieproduktie.' },
-        { id: 3, positionX: 38, positionY: 58, imageSrc: '/POI/draaibank.png', header: 'Draaibank', text: 'Voor elk bedrijf in de mechanische techniek is een cnc draaibank uiteraard een basisspeler.' },
-        { id: 4, positionX: 24.6, positionY: 49, imageSrc: '/POI/plaatwerk.png', header: 'Plaatwerk', text: 'In onze engineering houden we er rekening mee dat we met plaatwerk dure lasbewerkingen kunnen vervangen door gezet plaatwerk' },
-        { id: 5, positionX: 16.9, positionY: 60.2, imageSrc: '/POI/robot.png', header: 'robotfirma en machinebouw', text: 'Om het gat in mogelijkheden te dichten tussen robotfirma en machinebouwer zijn we gestart het de kennis over robottechniek in eigen huis te nemen.' },
-        { id: 6, positionX: 10, positionY: 55, imageSrc: '/POI/werkplaatsuitrusting.jpeg', header: 'Werkplaatsuitrusting', text: 'Werkplaatsuitrusting, zonder dat dit voor ons specialismes zijn, maar toch onmisbare competenties.' },
-        { id: 7, positionX: 28.8, positionY: 27.4, imageSrc: '/POI/vervoer.png', header: 'Transport', text: 'Om onze flexibiliteit te ondersteunen, maken we gebruik van eigen transport tot 6000kg.' },
-        { id: 8, positionX: 13.1, positionY: 39, imageSrc: '/POI/yingyang.png', header: 'Doel', text: 'Het niet materiele doel van werk hebben we ook hoog in het vaandel staan.' }
-    ]);
+    const [title, setTitle] = useState<contentProps>();
+    const [subtitle1, setSubtitle1] = useState<contentProps>();
+    const [subtitle2, setSubtitle2] = useState<contentProps>();
+    const [pois, setPois] = useState<POIProps[]>();
+
+    useEffect(() => {
+        const fetchPois = async () => {
+            const response = await getPois();
+            setPois(response);
+        }
+
+        fetchPois();
+    }, []);
+
+    useEffect(() => {
+        const fetchDynamicData = async () => {
+            const response = await getDynamicData();
+            response.forEach((data) => {
+                switch (data.type) {
+                    case 'title':
+                        setTitle(data);
+                        break;
+                    case 'subtitle1':
+                        setSubtitle1(data);
+                        break;
+                    case 'subtitle2':
+                        setSubtitle2(data);
+                        break;
+                }
+            });
+        }
+        fetchDynamicData();
+    }, []);
 
 
     useEffect(() => {
@@ -41,13 +76,33 @@ const InformationSection = () => {
             .then(data => setImages(data));
     }, []);
 
-    const updatePoi = (id: number, field: string, value: string): void => {
-        setPois(pois.map(poi => poi.id === id ? { ...poi, [field]: value } : poi));
+    const updatePoi = async (id: number, field: string, value: string): Promise<void> => {
+        const updatedPois = pois?.map(poi => {
+            if (poi.id === id) {
+                const updatedPoi = { ...poi, [field]: value };
+                updateSinglePoi(id, updatedPoi);
+                return updatedPoi;
+            }
+            return poi;
+        });
+        setPois(updatedPois);
     };
 
+    const handleUpdate = async (type: contentProps) => {
+        await updateDynamicData(type?.id, {content: type?.content});
+    }
+
     useEffect(() => {
-        setLoggedIn(false)
-    }, []);
+        handleUpdate(title);
+    }, [title]);
+
+    useEffect(() => {
+        handleUpdate(subtitle1);
+    }, [subtitle1]);
+
+    useEffect(() => {
+        handleUpdate(subtitle2);
+    }, [subtitle2]);
 
     return (
         <>
@@ -58,39 +113,42 @@ const InformationSection = () => {
                     <h1 className={'relative'}>
                         {loggedIn ? (
                             <EditableText
-                                initialText={title}
-                                onSave={setTitle}
+                                initialText={title?.content || ""}
+                                onSave={(text) => setTitle((prev) => prev ? { ...prev, content: text } : undefined)}
                                 className=""
                             />
                         ) : (
-                            title
+                            title?.content || ""
                         )}
                         <span className={'absolute -right-[3.5%]'}>
-            <Image src={'/front-page/marked.gif'} alt={'word highlighter'} width={224} height={96} unoptimized={true}
-                   className={'select-none pointer-events-none w-[12vw] h-[8.2vh]'}/>
-          </span>
+                            {!loggedIn && (
+                                <Image src={'/front-page/marked.gif'} alt={'word highlighter'} width={224} height={96}
+                                       unoptimized={true}
+                                       className={'select-none pointer-events-none w-[12vw] h-[8.2vh]'}/>
+                            )}
+                        </span>
                     </h1>
                     <br/>
                     <div className={'text-[1vw] mt-[36px] text-white rounded-t-md bg-[#D34E3B] px-2'}>
                         {loggedIn ? (
                             <EditableText
-                                initialText={subtitle1}
-                                onSave={setSubtitle1}
+                                initialText={subtitle1?.content || ""}
+                                onSave={(text) => setSubtitle1((prev) => prev ? { ...prev, content: text } : undefined)}
                                 className="bg-transparent"
                             />
                         ) : (
-                            subtitle1
+                            subtitle1?.content || ""
                         )}
                     </div>
                     <div className={'text-[1vw] text-white rounded-t-md bg-[#D34E3B] px-2'}>
                         {loggedIn ? (
                             <EditableText
-                                initialText={subtitle2}
-                                onSave={setSubtitle2}
+                                initialText={subtitle2?.content || ""}
+                                onSave={(text) => setSubtitle2((prev) => prev ? { ...prev, content: text } : undefined)}
                                 className="bg-transparent"
                             />
                         ) : (
-                            subtitle2
+                            subtitle2?.content || ""
                         )}
                     </div>
                 </div>
@@ -104,7 +162,7 @@ const InformationSection = () => {
                     </div>
                     {/* Left Side */}
                     {/* 5 */}
-                    {pois.map(poi => (
+                    {pois?.map(poi => (
                         <POI
                             key={poi.id}
                             positionX={poi.positionX}
@@ -335,7 +393,8 @@ const InformationSection = () => {
                                                 <HoverCardContent
                                                     className={'-mb-[3.25rem] ml-[46.25rem] bg-yellow-400 border-yellow-300 w-96'}>
                                                     <div className={'grid grid-rows-1 grid-cols-[auto]'}>
-                                                        <Image src={'/POI/EPLAN-Afdrukopdracht.png'} alt={'e-plan schema'}
+                                                        <Image src={'/POI/EPLAN-Afdrukopdracht.png'}
+                                                               alt={'e-plan schema'}
                                                                width={2339} height={1653}
                                                                className={'hover:scale-150 rounded-md'}/>
                                                     </div>
@@ -425,7 +484,7 @@ const InformationSection = () => {
                         >
                             <div
                                 className="before:rounded-bl-[5px] rotate-90 relative scale-[4.5] pr-0 right-[60px] bottom-20 w-[50px] p-5 font-sans bg-no-repeat rounded-md before:content-[''] before:absolute before:top-0 before:right-0 before:w-[1.35em] before:h-[3.2em] before:bg-[linear-gradient(to_left_bottom,_transparent_50%,_#EFC101_0,_#FFE701_27px,_#9B7D00)] before:transform before:translate-x-[-0.8em] before:translate-y-[-0.73em] before:rotate-[-36.7deg] before:shadow-[0_6px_4px_-4px_#eedbd6]">
-                            <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center">
+                                <h2 className="m-0 -rotate-[150deg] text-black bg-white absolute -top-4 text-[6px] -right-2.5 w-[54px] h-[32px] text-center">
                                     <span
                                         className={'mr-4 text-[4.5px] absolute -top-[4px] left-[6px] -scale-x-[1] rotate-[60deg] flex items-center text-center flex-col'}>DIEP GAAN<ChevronDown
                                         size={6}/></span>
