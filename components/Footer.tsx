@@ -2,8 +2,18 @@ import Link from "next/link"
 import {Mail} from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
+import ImageSliderFooter from "@/components/ImageSliderFooter";
+import React, {useEffect} from "react";
 
 export default function Footer() {
+  const [images, setImages] = React.useState([])
+
+  useEffect(() => {
+    fetch('/api/machines')
+        .then(response => response.json())
+        .then(data => setImages(data));
+  }, []);
+
   return (
       <footer
           id={'footer'}
@@ -12,6 +22,8 @@ export default function Footer() {
           <Image src={'/front-page/design-and-engineering-materials-parallax-blue-1.jpg'} alt={'tekening achtergrond'} fill={true} className={'object-cover relative -z-[1] select-none pointer-events-none'}/>
         </div>
 
+        <ImageSliderFooter
+            images={images}/>
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 py-12 bg-black pt-8 relative z-[0]">
           <div className="grid grid-cols-3">

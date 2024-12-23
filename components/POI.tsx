@@ -29,7 +29,7 @@ const POI = ({ positionX, positionY, imageSrc, header, text }: POIProps) => {
 
     return (
         <div
-            className={`h-[7vh] w-[3.5vw] absolute rounded-xl hover:cursor-pointer`}
+            className={`h-[10vh] w-[5vw] absolute rounded-xl hover:cursor-pointer`}
             style={{ top: `${positionY}%`, left: `${positionX}%` }}>
             <HoverCard>
                 <HoverCardTrigger>
