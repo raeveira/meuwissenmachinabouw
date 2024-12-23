@@ -28,7 +28,7 @@ const ImageSliderFooter = ({images}: { images: string[] }) => {
                         key={index}
                         src={image}
                         alt={`Slide ${index + 1}`}
-                        className="flex-shrink-0 h-[20vh]"
+                        className="flex-shrink-0 h-[26vh]"
                     />
                 ))}
             </div>
