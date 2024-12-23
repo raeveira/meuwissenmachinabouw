@@ -15,7 +15,7 @@ const ImageSliderFooter = ({images}: { images: string[] }) => {
 
     return (
         <div
-            className={`slider ${isAnimated ? 'overflow-hidden' : ''}`}
+            className={`mb-5 slider ${isAnimated ? 'overflow-hidden' : ''}`}
         >
             <div
                 className="flex items-center h-full animate-scroll border-[3px] border-yellow-400"
