@@ -23,10 +23,10 @@ model DynamicText {
 }
 
 model POI2 {
-  id        Int     @id @default(autoincrement())
-  positionX Int?
-  positionY Int?
-  imageSrc  String?
-  header    String?
-  text      String?
+  positionX Float
+  positionY Float
+  imageSrc  String
+  header    String
+  text      String
+  id        Int    @id @default(autoincrement())
 }
