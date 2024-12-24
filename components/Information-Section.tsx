@@ -107,7 +107,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
     return (
         <>
             <section id={'drawing'}
-                     className={`relative ${itim.className} w-screen h-screen overflow-hidden snap-start snap-always bg-[url("/front-page/design-and-engineering-materials-parallax-blue-1.jpg")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
+                     className={`relative ${itim.className} w-screen h-screen overflow-hidden snap-start snap-always bg-[url("/front-page/meeuwissen-2.7.png")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
                 <div
                     className={'flex flex-col justify-center w-full text-[2.5vw] pt-5 items-center tracking-wide text-[#000000] relative z-[3] select-none'}>
                     <h1 className={'relative'}>
@@ -154,7 +154,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                 </div>
                 <div className={'w-screen h-screen -bottom-[4.35rem] absolute z-[2]'}>
                     <Image src={'/front-page/meeuwissen-2.6.png'} alt={'soccerfield'} fill={true}
-                           className={'object-cover select-none pointer-events-none max-desktop-sm:object-contain'}/>
+                           className={'!object-cover select-none pointer-events-none max-desktop-sm:object-contain'}/>
                     <div
                         className="absolute z-[3] w-[65.28vw] h-[4.2vh] bg-[#EFC101] top-[21.1%] left-[19.05%] overflow-hidden select-none pointer-events-none">
                         <ImageSlider
