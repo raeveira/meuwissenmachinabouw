@@ -15,15 +15,28 @@ export const getPois = async () => {
     return prisma.pOI.findMany()
 }
 
-export const updateSinglePoi = async (id: number, data: poiDataType | undefined) => {
+export const getPois2 = async () => {
+    return prisma.pOI2.findMany()
+}
+
+export const updateSinglePoi = async (id: number, data: poiDataType | undefined, type: string) => {
     if (!data) {
         return {error: 'No data provided'}
     }
 
-    return prisma.pOI.update({
-        where: {id},
-        data,
-    })
+    if(type === 'poi') {
+        return prisma.pOI.update({
+            where: {id},
+            data,
+        })
+    } else if(type === 'poi2') {
+        return prisma.pOI2.update({
+            where: {id},
+            data,
+        })
+    } else {
+        return {error: 'Invalid type'}
+    }
 }
 
 export const getDynamicData = async () => {

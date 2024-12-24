@@ -9,7 +9,7 @@ import {ChevronDown, ChevronRight} from "lucide-react";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {EditableText} from "@/components/EditableText";
-import {getDynamicData, getPois, updateDynamicData, updateSinglePoi} from "@/prisma/script";
+import {getDynamicData, getPois, getPois2, updateDynamicData, updateSinglePoi} from "@/prisma/script";
 
 const itim = Itim({
     weight: "400",
@@ -39,11 +39,15 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
     const [subtitle1, setSubtitle1] = useState<contentProps>();
     const [subtitle2, setSubtitle2] = useState<contentProps>();
     const [pois, setPois] = useState<POIProps[]>();
+    const [pois2, setPois2] = useState<POIProps[]>();
 
     useEffect(() => {
         const fetchPois = async () => {
             const response = await getPois();
             setPois(response);
+
+            const response2 = await getPois2();
+            setPois2(response2);
         }
 
         fetchPois();
@@ -80,12 +84,24 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
         const updatedPois = pois?.map(poi => {
             if (poi.id === id) {
                 const updatedPoi = { ...poi, [field]: value };
-                updateSinglePoi(id, updatedPoi);
+                updateSinglePoi(id, updatedPoi, 'poi');
                 return updatedPoi;
             }
             return poi;
         });
         setPois(updatedPois);
+    };
+
+    const updatePoi2 = async (id: number, field: string, value: string): Promise<void> => {
+        const updatedPois = pois2?.map(poi => {
+            if (poi.id === id) {
+                const updatedPoi = { ...poi, [field]: value };
+                updateSinglePoi(id, updatedPoi, 'poi2');
+                return updatedPoi;
+            }
+            return poi;
+        });
+        setPois2(updatedPois);
     };
 
     const handleUpdate = async (type: contentProps) => {
@@ -461,21 +477,38 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                         </HoverCard>
                     </div>
 
-
                     {/* Right Side */}
-                    <POI2 positionX={55.6} positionY={58.7} imageSrc={'/POI/product1.jpg'} header={''}
-                          text={''}/>
-                    <POI2 positionX={70} positionY={47.7} imageSrc={'/POI/product2.png'} header={''}
-                          text={''}/>
-                    <POI2 positionX={86.5} positionY={38.5} imageSrc={'/front-page/cup.png'}
-                          header={'Materialistiche beloning.'}
-                          text={'Elke zege wordt door ons uitbundig gevierd.'}/>
-                    <POI2 positionX={76.4} positionY={39.5} imageSrc={'/POI/product3.jpg'} header={''}
-                          text={''}/>
-                    <POI2 positionX={60.94} positionY={39.3} imageSrc={'/POI/product4.jpeg'} header={''}
-                          text={''}/>
-                    <POI2 positionX={58.23} positionY={29} imageSrc={'/POI/product5.png'} header={''}
-                          text={''}/>
+                    {pois2?.map(poi => (
+                        <POI2
+                            key={poi.id}
+                            loggedIn={loggedIn}
+                            positionX={poi.positionX}
+                            positionY={poi.positionY}
+                            imageSrc={poi.imageSrc}
+                            header={
+                                loggedIn ? (
+                                    <EditableText
+                                        initialText={poi.header}
+                                        onSave={(value) => updatePoi2(poi.id, 'header', value)}
+                                        className="bg-transparent"
+                                    />
+                                ) : (
+                                    poi.header
+                                )
+                            }
+                            text={
+                                loggedIn ? (
+                                    <EditableText
+                                        initialText={poi.text}
+                                        onSave={(value) => updatePoi2(poi.id, 'text', value)}
+                                        className="bg-transparent"
+                                    />
+                                ) : (
+                                    poi.text
+                                )
+                            }
+                        />
+                    ))}
                 </div>
                 <div className={'absolute bottom-0 left-0 z-[2] -scale-x-[1]'}>
                     <Link href={'#footer'}>
