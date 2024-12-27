@@ -25,7 +25,7 @@ type POIProps = {
     imageSrc: string;
     header: string;
     text: string;
-    extraImageSrc?: string;
+    extraImageSrc: string | null;
 }
 
 type contentProps = {
@@ -45,7 +45,6 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
     useEffect(() => {
         const fetchPois = async () => {
             const response = await getPois();
-            console.log(response);
             setPois(response);
 
             const response2 = await getPois2();
