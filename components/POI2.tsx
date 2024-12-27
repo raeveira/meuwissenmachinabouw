@@ -11,7 +11,7 @@ interface POIProps {
     imageSrc: string;
     header: ReactNode;
     text: ReactNode;
-    extraImageSrc?: string;
+    extraImageSrc: string | null;
 }
 
 const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text, extraImageSrc}: POIProps) => {
