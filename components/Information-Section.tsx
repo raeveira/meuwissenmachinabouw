@@ -125,6 +125,29 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
         <>
             <section id={'drawing'}
                      className={`relative ${itim.className} w-screen h-screen overflow-hidden snap-start snap-always bg-[url("/front-page/meeuwissen-2.7.png")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
+                <div className={'absolute z-10 top-[3.6%] left-[2.2%] h-32 w-20'}>
+                    <HoverCard >
+                        <HoverCardTrigger>
+                            <div className={'relative w-full h-full group'}>
+                                <div
+                                    className="absolute inset-0 opacity-0 transition-all duration-300 ease-in-out transform -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 w-40 scale-50 top-[10%]">
+                                    <Image
+                                        src={'/pig.svg'}
+                                        alt={'hover image'}
+                                        fill={true}
+                                        className="object-cover -scale-x-100"
+                                    />
+                                </div>
+                                <Image src={'/tree.png'} alt={'tree'} fill={true} className={'object-cover'}/>
+                            </div>
+                        </HoverCardTrigger>
+                        <HoverCardContent className={'bg-yellow-400 border-yellow-300'}>
+                            <span>
+                                Succes is waar voorbereiding en toeval elkaar treffen en hier zeggen wij &quot;Soms vind een blind varken ook wel eens een eikel&quot;
+                            </span>
+                        </HoverCardContent>
+                    </HoverCard>
+                </div>
                 <div
                     className={'flex flex-col justify-center w-full text-[2.5vw] pt-5 items-center tracking-wide text-white relative z-[3] select-none'}>
                     <h1 className={'relative'}>
