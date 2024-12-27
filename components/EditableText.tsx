@@ -13,13 +13,14 @@ export const EditableText = ({ initialText, onSave, className }: {initialText: s
     };
 
     return (
-        <div className="relative group">
+        <div className="relative">
             {editing ? (
                 <input
                     type="text"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
-                    className={`bg-white text-black px-2 ${className}`}
+                    className={`bg-white text-black px-2 ${className} min-h-2`}
+                    placeholder={'Enter text'}
                 />
             ) : (
                 <span className={className}>{text}</span>
@@ -27,7 +28,7 @@ export const EditableText = ({ initialText, onSave, className }: {initialText: s
             {!editing && (
                 <Button
                     onClick={handleEdit}
-                    className="absolute -top-8 -right-8 bg-blue-500 hover:bg-blue-600 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute -top-8 -right-8 bg-blue-500 hover:bg-blue-600 p-2 rounded-full"
                 >
                     <PencilLine className="h-4 w-4" />
                 </Button>
