@@ -572,7 +572,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                             className="border-r-2 border-amber-200 pr-5"
                                         />
                                     ) : (
-                                        <p className={'border-r-2 border-amber-200 pr-5'}>{referee && referee[0] ? referee[0].text : ""}</p>
+                                        <p className={'border-r-2 border-amber-200 pr-5 text-pretty max-w-[175px]'}>{referee && referee[0] ? referee[0].text : ""}</p>
                                     )}
                                     <HoverCard>
                                         <HoverCardTrigger
