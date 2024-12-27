@@ -148,7 +148,6 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
         const updatedReferee = referee?.map(ref => {
             if (ref?.id === id) {
                 const updatedRef = { ...ref, [field]: value };
-                console.log(updatedRef);
                 updateSingleReferee(id, updatedRef);
                 return updatedRef;
             }

@@ -51,8 +51,6 @@ export const updateSingleReferee = async (id: number | undefined, data: {text: s
         return {error: 'No content provided'}
     }
 
-    console.log(data)
-
     return prisma.referee.update({
         where: {id},
         data,
