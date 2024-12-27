@@ -1,6 +1,8 @@
 import {ReactNode, useEffect, useState} from "react";
 import Image from "next/image";
 import {HoverCard, HoverCardContent, HoverCardTrigger} from "@/components/ui/hover-card";
+import {Button} from "@/components/ui/button";
+import {ChevronRight} from "lucide-react";
 
 interface POIProps {
     loggedIn: boolean;
@@ -9,9 +11,10 @@ interface POIProps {
     imageSrc: string;
     header: ReactNode;
     text: ReactNode;
+    extraImageSrc?: string;
 }
 
-const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text}: POIProps) => {
+const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text, extraImageSrc}: POIProps) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -48,6 +51,28 @@ const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text}: POIProps
                         <div className={'text-sm'}>
                             {text}
                         </div>
+                        {extraImageSrc && (
+                            <HoverCard>
+                                <HoverCardTrigger>
+                                    <Button
+                                        variant="outline"
+                                        className="mt-2 bg-yellow-500 text-black hover:bg-yellow-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:scale-105 font-semibold"
+                                    >
+                                        Bekijk meer
+                                        <ChevronRight className="ml-2 h-4 w-4"/>
+                                    </Button>
+                                </HoverCardTrigger>
+                                <HoverCardContent
+                                    className={'-mb-[3.25rem] ml-[46.25rem] bg-yellow-400 border-yellow-300 w-96'}>
+                                    <div className={'grid grid-rows-1 grid-cols-[auto]'}>
+                                        <Image src={extraImageSrc}
+                                               alt={'POI hover image'}
+                                               width={2339} height={1653}
+                                               className={'hover:scale-150 rounded-md'}/>
+                                    </div>
+                                </HoverCardContent>
+                            </HoverCard>
+                        )}
                     </HoverCardContent>
                 </HoverCard>) : (
                 <>

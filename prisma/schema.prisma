@@ -8,12 +8,13 @@ datasource db {
 }
 
 model POI {
-  id        Int    @id @default(autoincrement())
-  positionX Float
-  positionY Float
-  imageSrc  String
-  header    String
-  text      String
+  id            Int     @id @default(autoincrement())
+  positionX     Float
+  positionY     Float
+  imageSrc      String
+  header        String
+  text          String
+  extraImageSrc String?
 }
 
 model DynamicText {
@@ -23,10 +24,11 @@ model DynamicText {
 }
 
 model POI2 {
-  positionX Float
-  positionY Float
-  imageSrc  String
-  header    String
-  text      String
-  id        Int    @id @default(autoincrement())
+  positionX     Float
+  positionY     Float
+  imageSrc      String
+  header        String
+  text          String
+  id            Int     @id @default(autoincrement())
+  extraImageSrc String?
 }

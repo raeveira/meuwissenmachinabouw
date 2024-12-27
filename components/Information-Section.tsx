@@ -25,6 +25,7 @@ type POIProps = {
     imageSrc: string;
     header: string;
     text: string;
+    extraImageSrc?: string;
 }
 
 type contentProps = {
@@ -44,6 +45,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
     useEffect(() => {
         const fetchPois = async () => {
             const response = await getPois();
+            console.log(response);
             setPois(response);
 
             const response2 = await getPois2();
@@ -177,7 +179,6 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                             images={images}/>
                     </div>
                     {/* Left Side */}
-                    {/* 5 */}
                     {pois?.map(poi => (
                         <POI
                             key={poi.id}
@@ -206,6 +207,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                     poi.text
                                 )
                             }
+                            extraImageSrc={poi.extraImageSrc}
                         />
                     ))}
 
@@ -519,6 +521,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                     poi.text
                                 )
                             }
+                            extraImageSrc={poi.extraImageSrc}
                         />
                     ))}
                 </div>
