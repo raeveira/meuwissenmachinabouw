@@ -215,14 +215,20 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                         <div className={'rounded-tl-[4rem] relative group'}>
                             <HoverCard>
                                 <HoverCardTrigger>
-                                    <Image src={'/front-page/freesunit xella.JPG'} alt={''} fill={true}
-                                           className={'object-cover rounded-tl-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}/>
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={'/front-page/freesunit xella.JPG'}
+                                            alt={''}
+                                            fill={true}
+                                            className={'object-cover rounded-tl-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'}
+                                        />
+                                    </div>
                                 </HoverCardTrigger>
                                 <HoverCardContent
-                                    className={'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
+                                    className={'mt-5 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'}>
                                     {loggedIn ? (
                                         <>
-                                            <EditableText
+                                        <EditableText
                                                 initialText="Software"
                                                 onSave={(value) => console.log("Software header updated:", value)}
                                                 className="text-2xl font-semibold"
@@ -248,18 +254,20 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                         <div className={'rounded-tr-[4rem] relative group'}>
                             <HoverCard>
                                 <HoverCardTrigger>
-                                    <Image
-                                        src={'/front-page/lisaas.png'}
-                                        alt={''}
-                                        fill={true}
-                                        className={
-                                            'object-cover rounded-tr-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
-                                        }
-                                    />
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={'/front-page/lisaas.png'}
+                                            alt={''}
+                                            fill={true}
+                                            className={
+                                                'object-cover rounded-tr-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
+                                            }
+                                        />
+                                    </div>
                                 </HoverCardTrigger>
                                 <HoverCardContent
                                     className={
-                                        'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
+                                        'mt-5 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
                                     }
                                 >
                                     {loggedIn ? (
@@ -293,18 +301,20 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                         <div className={'rounded-bl-[4rem] relative group'}>
                             <HoverCard>
                                 <HoverCardTrigger>
-                                    <Image
-                                        src={'/front-page/sterkte berekening.jpeg'}
-                                        alt={''}
-                                        fill={true}
-                                        className={
-                                            'object-cover rounded-bl-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
-                                        }
-                                    />
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={'/front-page/sterkte berekening.jpeg'}
+                                            alt={''}
+                                            fill={true}
+                                            className={
+                                                'object-cover rounded-bl-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
+                                            }
+                                        />
+                                    </div>
                                 </HoverCardTrigger>
                                 <HoverCardContent
                                     className={
-                                        'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
+                                        'mt-5 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
                                     }
                                 >
                                     {loggedIn ? (
@@ -335,18 +345,20 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                         <div className={'rounded-br-[4rem] relative group'}>
                             <HoverCard>
                                 <HoverCardTrigger>
-                                    <Image
-                                        src={'/front-page/E-plan.png'}
-                                        alt={''}
-                                        fill={true}
-                                        className={
-                                            'object-cover rounded-br-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
-                                        }
-                                    />
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={'/front-page/E-plan.png'}
+                                            alt={''}
+                                            fill={true}
+                                            className={
+                                                'object-cover rounded-br-[4rem] group-hover:scale-150 group-hover:z-[4] group-hover:rounded-[.5rem] transition-transform duration-300'
+                                            }
+                                        />
+                                    </div>
                                 </HoverCardTrigger>
                                 <HoverCardContent
                                     className={
-                                        'mt-20 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
+                                        'mt-5 bg-yellow-400 border-yellow-300 group-hover:scale-100 transition-transform duration-300'
                                     }
                                 >
                                     {loggedIn ? (
