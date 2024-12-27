@@ -582,7 +582,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                             <ChevronRight className={'h-4 w-4'}/>
                                         </HoverCardTrigger>
                                         <HoverCardContent
-                                            className={'-mt-[17.5%] ml-[82%] bg-yellow-400 border-yellow-300'}>
+                                            className={'-mb-[24%] ml-[66%] bg-yellow-400 border-yellow-300 h-max w-max'}>
                                             {loggedIn ? (
                                                 <EditableText
                                                     initialText={referee && referee[0] ? referee[0].TOU : ""}
@@ -590,8 +590,19 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                                     className="bg-transparent"
                                                 />
                                             ) : (
-                                                <p>{referee && referee[0] ? referee[0].TOU : ""}</p>
+                                                <div className="w-[500px] h-[500px]">
+                                                    <object
+                                                        data={referee && referee[0] ? referee[0].TOU : ""}
+                                                        type="application/pdf"
+                                                        width="100%"
+                                                        height="100%"
+                                                    >
+                                                        <p>Your browser does not support PDFs. <br/> <br/>
+                                                            <a href={referee && referee[0] ? referee[0].TOU : ""} className={'underline font-bold'}>Click here to download the PDF</a>.</p>
+                                                    </object>
+                                                </div>
                                             )}
+
                                         </HoverCardContent>
                                     </HoverCard>
                                 </div>
