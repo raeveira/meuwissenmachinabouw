@@ -32,7 +32,7 @@ const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text}: POIProps
             className={`h-[10vh] w-[5vw] absolute rounded-xl hover:cursor-pointer`}
             style={{top: `${positionY}%`, left: `${positionX}%`}}>
 
-            {loggedIn || (header !== "" && text !== "") ? (
+            {loggedIn || (header !== "" || text !== "") ? (
                 <HoverCard>
                     <HoverCardTrigger>
                         <div
@@ -43,9 +43,9 @@ const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text}: POIProps
                         </div>
                     </HoverCardTrigger>
 
-                    <HoverCardContent className={'mt-1 bg-yellow-400 border-yellow-300'}>
+                    <HoverCardContent className={`mt-1 bg-yellow-400 border-yellow-300 ${loggedIn && 'space-y-10'}`}>
                         <h2 className={'text-xl font-semibold'}>{header}</h2>
-                        <div className={'text-sm'}>
+                        <div className={'text-sm bg-red-500'}>
                             {text}
                         </div>
                     </HoverCardContent>
