@@ -32,3 +32,14 @@ model POI2 {
   id            Int     @id @default(autoincrement())
   extraImageSrc String?
 }
+
+model secret {
+  id   Int    @id @default(autoincrement())
+  text String
+}
+
+model referee {
+  id   Int    @id @default(autoincrement())
+  text String
+  TOU  String
+}

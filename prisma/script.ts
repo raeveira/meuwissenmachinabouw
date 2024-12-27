@@ -19,6 +19,46 @@ export const getPois2 = async () => {
     return prisma.pOI2.findMany()
 }
 
+export const getSecret = async () => {
+    return prisma.secret.findMany()
+}
+
+export const updateSecret = async (id: number | undefined, data: {content: string | undefined}) => {
+    if(!id) {
+        return {error: 'No id provided'}
+    }
+
+    if (!data.content) {
+        return {error: 'No content provided'}
+    }
+
+    return prisma.secret.update({
+        where: {id},
+        data,
+    })
+}
+
+export const getReferee = async () => {
+    return prisma.referee.findMany()
+}
+
+export const updateSingleReferee = async (id: number | undefined, data: {text: string, TOU: string}) => {
+    if(!id) {
+        return {error: 'No id provided'}
+    }
+
+    if (!data.text || !data.TOU) {
+        return {error: 'No content provided'}
+    }
+
+    console.log(data)
+
+    return prisma.referee.update({
+        where: {id},
+        data,
+    })
+}
+
 export const updateSinglePoi = async (id: number, data: poiDataType | undefined, type: string) => {
     if (!data) {
         return {error: 'No data provided'}

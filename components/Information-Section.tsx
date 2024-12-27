@@ -9,7 +9,15 @@ import {ChevronDown, ChevronRight} from "lucide-react";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {EditableText} from "@/components/EditableText";
-import {getDynamicData, getPois, getPois2, updateDynamicData, updateSinglePoi} from "@/prisma/script";
+import {
+    getDynamicData,
+    getPois,
+    getPois2,
+    getReferee,
+    getSecret,
+    updateDynamicData,
+    updateSinglePoi, updateSingleReferee
+} from "@/prisma/script";
 
 const itim = Itim({
     weight: "400",
@@ -34,6 +42,17 @@ type contentProps = {
     content: string;
 } | undefined;
 
+type secretProps = {
+    id: number;
+    text: string;
+} | undefined;
+
+type refereeProps = {
+    id: number;
+    text: string;
+    TOU: string;
+} | undefined;
+
 const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
     const [images, setImages] = useState<string[]>([]);
     const [title, setTitle] = useState<contentProps>();
@@ -41,6 +60,8 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
     const [subtitle2, setSubtitle2] = useState<contentProps>();
     const [pois, setPois] = useState<POIProps[]>();
     const [pois2, setPois2] = useState<POIProps[]>();
+    const [secret, setSecret] = useState<secretProps[]>();
+    const [referee, setReferee] = useState<refereeProps[]>();
 
     useEffect(() => {
         const fetchPois = async () => {
@@ -52,6 +73,24 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
         }
 
         fetchPois();
+    }, []);
+
+    useEffect(() => {
+        const fetchSecret = async () => {
+            const response = await getSecret();
+            setSecret(response);
+        }
+
+        fetchSecret();
+    }, []);
+
+    useEffect(() => {
+        const fetchReferee = async () => {
+            const response = await getReferee();
+            setReferee(response);
+        }
+
+        fetchReferee();
     }, []);
 
     useEffect(() => {
@@ -105,6 +144,19 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
         setPois2(updatedPois);
     };
 
+    const updateReferee = async (id: number, field: string, value: string): Promise<void> => {
+        const updatedReferee = referee?.map(ref => {
+            if (ref?.id === id) {
+                const updatedRef = { ...ref, [field]: value };
+                console.log(updatedRef);
+                updateSingleReferee(id, updatedRef);
+                return updatedRef;
+            }
+            return ref;
+        });
+        setReferee(updatedReferee);
+    }
+
     const handleUpdate = async (type: contentProps) => {
         await updateDynamicData(type?.id, {content: type?.content});
     }
@@ -143,7 +195,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                         </HoverCardTrigger>
                         <HoverCardContent className={'bg-yellow-400 border-yellow-300'}>
                             <span>
-                                Succes is waar voorbereiding en toeval elkaar treffen en hier zeggen wij &quot;Soms vind een blind varken ook wel eens een eikel&quot;
+                                {secret && secret[0] ? secret[0].text : ""}
                             </span>
                         </HoverCardContent>
                     </HoverCard>
@@ -481,12 +533,12 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                     />
                                     {loggedIn ? (
                                         <EditableText
-                                            initialText="Lorem ipsum"
-                                            onSave={(value) => console.log('Referee text updated:', value)}
+                                            initialText={referee && referee[0] ? referee[0].text : ""}
+                                            onSave={(value) => referee && referee[0] ? updateReferee(referee[0].id, 'text', value) : console.error('No referee found')}
                                             className="border-r-2 border-amber-200 pr-5"
                                         />
                                     ) : (
-                                        <p className={'border-r-2 border-amber-200 pr-5'}>Lorem ipsum</p>
+                                        <p className={'border-r-2 border-amber-200 pr-5'}>{referee && referee[0] ? referee[0].text : ""}</p>
                                     )}
                                     <HoverCard>
                                         <HoverCardTrigger
@@ -499,12 +551,12 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                             className={'-mt-[17.5%] ml-[82%] bg-yellow-400 border-yellow-300'}>
                                             {loggedIn ? (
                                                 <EditableText
-                                                    initialText="voorwaarden gaan hier"
-                                                    onSave={(value) => console.log('Voorwaarden text updated:', value)}
+                                                    initialText={referee && referee[0] ? referee[0].TOU : ""}
+                                                    onSave={(value) => referee && referee[0] ? updateReferee(referee[0].id, 'TOU', value) : console.error('No referee found')}
                                                     className="bg-transparent"
                                                 />
                                             ) : (
-                                                'voorwaarden gaan hier'
+                                                <p>{referee && referee[0] ? referee[0].TOU : ""}</p>
                                             )}
                                         </HoverCardContent>
                                     </HoverCard>
