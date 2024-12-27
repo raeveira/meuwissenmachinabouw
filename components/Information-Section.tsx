@@ -62,6 +62,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
     const [pois2, setPois2] = useState<POIProps[]>();
     const [secret, setSecret] = useState<secretProps[]>();
     const [referee, setReferee] = useState<refereeProps[]>();
+    const [showPig, setShowPig] = useState(false);
 
     useEffect(() => {
         const fetchPois = async () => {
@@ -113,6 +114,19 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
         fetchDynamicData();
     }, []);
 
+    useEffect(() => {
+        const showPigInterval = () => {
+            setShowPig(true);
+            setTimeout(() => {
+                setShowPig(false);
+            }, 2000);
+        };
+
+        showPigInterval();
+        const interval = setInterval(showPigInterval, 9000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         fetch('/api/partners')
@@ -193,7 +207,10 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                         <HoverCardTrigger>
                             <div className={'relative w-full h-full group'}>
                                 <div
-                                    className="absolute inset-0 opacity-0 transition-all duration-300 ease-in-out transform -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 w-40 scale-50 top-[10%]">
+                                    className={`absolute inset-0 transition-all duration-300 ease-in-out transform -translate-x-1 w-40 scale-50 top-[10%] ${
+                                        showPig ? 'opacity-100 -translate-x-9' : 'opacity-0'
+                                    } group-hover:opacity-100 group-hover:translate-x-0`}
+                                >
                                     <Image
                                         src={'/pig.svg'}
                                         alt={'hover image'}
