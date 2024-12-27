@@ -125,7 +125,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
             <section id={'drawing'}
                      className={`relative ${itim.className} w-screen h-screen overflow-hidden snap-start snap-always bg-[url("/front-page/meeuwissen-2.7.png")] bg-left-bottom bg-cover bg-no-repeat bg-[#7A7A7A]`}>
                 <div
-                    className={'flex flex-col justify-center w-full text-[2.5vw] pt-5 items-center tracking-wide text-[#000000] relative z-[3] select-none'}>
+                    className={'flex flex-col justify-center w-full text-[2.5vw] pt-5 items-center tracking-wide text-white relative z-[3] select-none'}>
                     <h1 className={'relative'}>
                         {loggedIn ? (
                             <EditableText
