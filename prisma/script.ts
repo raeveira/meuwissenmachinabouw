@@ -23,12 +23,12 @@ export const getSecret = async () => {
     return prisma.secret.findMany()
 }
 
-export const updateSecret = async (id: number | undefined, data: {content: string | undefined}) => {
+export const updateSingleSecret = async (id: number | undefined, data: {text: string}) => {
     if(!id) {
         return {error: 'No id provided'}
     }
 
-    if (!data.content) {
+    if (!data.text) {
         return {error: 'No content provided'}
     }
 

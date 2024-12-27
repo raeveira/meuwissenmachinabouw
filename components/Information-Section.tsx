@@ -16,7 +16,7 @@ import {
     getReferee,
     getSecret,
     updateDynamicData,
-    updateSinglePoi, updateSingleReferee
+    updateSinglePoi, updateSingleReferee, updateSingleSecret
 } from "@/prisma/script";
 
 const itim = Itim({
@@ -156,6 +156,18 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
         setReferee(updatedReferee);
     }
 
+    const updateSecret = async (id: number, field: string, value: string): Promise<void> => {
+        const updatedSecret = secret?.map(sec => {
+            if (sec?.id === id) {
+                const updatedSec = { ...sec, [field]: value };
+                updateSingleSecret(id, updatedSec);
+                return updatedSec;
+            }
+            return sec;
+        });
+        setSecret(updatedSecret);
+    }
+
     const handleUpdate = async (type: contentProps) => {
         await updateDynamicData(type?.id, {content: type?.content});
     }
@@ -193,9 +205,15 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                             </div>
                         </HoverCardTrigger>
                         <HoverCardContent className={'bg-yellow-400 border-yellow-300'}>
-                            <span>
-                                {secret && secret[0] ? secret[0].text : ""}
-                            </span>
+                            {loggedIn ? (
+                                <EditableText
+                                    initialText={secret && secret[0] ? secret[0].text : ""}
+                                    onSave={(value) => secret && secret[0] ? updateSecret(secret[0].id, 'text', value) : console.error('No secret found')}
+                                    className=""
+                                />
+                            ) : (
+                                secret && secret[0] ? secret[0].text : ""
+                            )}
                         </HoverCardContent>
                     </HoverCard>
                 </div>
