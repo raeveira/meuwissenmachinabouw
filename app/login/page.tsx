@@ -74,7 +74,7 @@ export default function LoginPage() {
                 <Card className="border-zinc-800 bg-zinc-900/50 backdrop-blur">
                     <CardHeader>
                         <h1 className="text-2xl font-bold text-center text-[#FFD700]">
-                            Welcome Back
+                            Welkom Terug
                         </h1>
                     </CardHeader>
                     <CardContent>
@@ -84,7 +84,7 @@ export default function LoginPage() {
                                     <Input
                                         type={showPassword ? 'text' : 'password'}
                                         name="password"
-                                        placeholder="Enter password"
+                                        placeholder="Voer uw wachtwoord in"
                                         required
                                         className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400"
                                     />
@@ -101,7 +101,7 @@ export default function LoginPage() {
                                             <Eye className="h-4 w-4" />
                                         )}
                                         <span className="sr-only">
-                      {showPassword ? 'Hide password' : 'Show password'}
+                      {showPassword ? 'Verberg Wachtwoord' : 'Toon Wachtwoord'}
                     </span>
                                     </Button>
                                 </div>
