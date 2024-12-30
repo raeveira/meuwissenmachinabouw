@@ -32,7 +32,7 @@ const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text, extraImag
 
     return (
         <div
-            className={`h-[10vh] w-[5vw] absolute rounded-xl hover:cursor-pointer`}
+            className={`h-[8.5vh] w-[4.5vw] absolute rounded-xl hover:cursor-pointer`}
             style={{top: `${positionY}%`, left: `${positionX}%`}}>
 
             {loggedIn || (header !== "" || text !== "") ? (
@@ -42,7 +42,7 @@ const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text, extraImag
                             className={'h-[16px] w-[16px] rotate-45 rounded-[10px] absolute -bottom-1.5 left-1/2 -translate-x-1/2'}/>
                         <div className={'w-full h-full flex items-center justify-center select-none'}>
                             <Image src={imageSrc} alt={'POI hover image'} fill={true}
-                                   className={'object-fill rounded-[10px] z-[0] relative hover:scale-150 transition-all duration-300'}/>
+                                   className={'object-fill rounded-[10px] z-[0] relative hover:scale-[2] transition-all duration-300'}/>
                         </div>
                     </HoverCardTrigger>
 
@@ -68,7 +68,7 @@ const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text, extraImag
                                         <Image src={extraImageSrc}
                                                alt={'POI hover image'}
                                                width={2339} height={1653}
-                                               className={'hover:scale-150 rounded-md'}/>
+                                               className={'hover:scale-[2] rounded-md'}/>
                                     </div>
                                 </HoverCardContent>
                             </HoverCard>
@@ -80,7 +80,7 @@ const POI2 = ({loggedIn, positionX, positionY, imageSrc, header, text, extraImag
                         className={'h-[16px] w-[16px] rotate-45 rounded-[10px] absolute -bottom-1.5 left-1/2 -translate-x-1/2'}/>
                     <div className={'w-full h-full flex items-center justify-center select-none'}>
                         <Image src={imageSrc} alt={'POI hover image'} fill={true}
-                               className={'object-fill rounded-[10px] z-[0] relative hover:scale-150 transition-all duration-300'}/>
+                               className={'object-fill rounded-[10px] z-[0] relative hover:scale-[2] transition-all duration-300'}/>
                     </div>
                 </>
             )}
