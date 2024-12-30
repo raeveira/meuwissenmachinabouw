@@ -14,6 +14,15 @@ export default function Footer() {
         .then(data => setImages(data));
   }, []);
 
+    const copyMail = () => {
+      navigator.clipboard.writeText('info@meuwissenmachinebouw.nl')
+      const copy = document.getElementById('clipboard-copy')
+        copy?.classList.remove('hidden')
+        setTimeout(() => {
+            copy?.classList.add('hidden')
+        }, 2000)
+    }
+
   return (
       <footer
           id={'footer'}
@@ -56,16 +65,18 @@ export default function Footer() {
                   +31 6 216 483 15
                 </Link>
               </div>
-              <div className={'ml-3.5 flex items-center flex-col gap-6 w-[110px]'}>
-                <Link href="mailto:info@example.com">
+              <div className={'ml-3.5 flex items-center flex-col gap-6 w-[110px] relative'}>
                   <Button
                       variant="outline"
                       className="border-yellow-400 bg-black text-yellow-400 hover:bg-yellow-400 hover:text-black"
+                      onClick={copyMail}
                   >
                     <Mail className="mr-2 h-4 w-4"/>
                     Stuur een <br/>mail
                   </Button>
-                </Link>
+                <div className={'hidden flex flex-row absolute z-40 left-[125%] top-[10%] w-max border-yellow-400 bg-black text-yellow-400'} id={'clipboard-copy'}>
+                    <p>Email gekopieerd</p>
+                </div>
               </div>
             </div>
           </div>
