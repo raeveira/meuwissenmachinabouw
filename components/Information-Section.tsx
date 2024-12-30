@@ -292,7 +292,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                     <Image src={'/front-page/meeuwissen-2.6.png'} alt={'soccerfield'} fill={true}
                            className={'!object-cover select-none pointer-events-none max-desktop-sm:object-contain'}/>
                     <div
-                        className="absolute z-[3] w-[65.28vw] h-[4.2vh] bg-[#EFC101] top-[21.1%] left-[19.05%] overflow-hidden select-none pointer-events-none">
+                        className="absolute z-[3] w-[65.28vw] h-[4.2vh] bg-[#EFC101] top-[21.1%] max-xl:top-[23%] left-[19.05%] overflow-hidden select-none pointer-events-none">
                         <ImageSlider
                             images={images}/>
                     </div>
