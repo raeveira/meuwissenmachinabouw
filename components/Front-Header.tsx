@@ -50,7 +50,7 @@ const FrontHeader = () => {
                 </h2>
                 <div className={'border-b-4 border-b-solid border-b-[#EFC101] rounded-xl max-w-[450px]'}/>
             </div>
-            <div className={'absolute bottom-[5%] right-[25%]'}>
+            <div className={'absolute bottom-[15%] right-[20%]'}>
                 <Image src={'/front-page/radio.png'} alt={'radio'} height={195} width={195} onClick={playRadio} className={'-rotate-[10deg] hover:scale-125 hover:rotate-[15deg] hover:cursor-pointer duration-300 transition-all'}/>
                 <Image src={'/pijl.png'} alt={'arrow point towards radio'} height={1200} width={600} className={'absolute top-[65%] -left-[150%] scale-[2]'} />
             </div>
