@@ -30,6 +30,17 @@ const POI = ({positionX, positionY, imageSrc, header, text, extraImageSrc}: POIP
         return null;
     }
 
+    function formatText(text: string) {
+        const parts = text.split(/(\*\*.*?\*\*)/);
+        return parts.map((part, index) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+                return <span key={index} className="font-bold">{part.slice(2, -2)}</span>;
+            }
+            return part;
+        });
+    }
+
+
     return (
         <div
             className={`h-[10vh] w-[5vw] absolute rounded-xl hover:cursor-pointer`}
@@ -47,7 +58,7 @@ const POI = ({positionX, positionY, imageSrc, header, text, extraImageSrc}: POIP
                 <HoverCardContent className={'mt-1 bg-yellow-400 border-yellow-300'}>
                     <h2 className={'text-xl font-semibold'}>{header}</h2>
                     <div className={'text-sm'}>
-                        {text}
+                        {formatText(text)}
                     </div>
                     {extraImageSrc && (
                         <HoverCard>
