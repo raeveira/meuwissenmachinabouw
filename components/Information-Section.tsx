@@ -198,6 +198,16 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
         handleUpdate(subtitle2);
     }, [subtitle2]);
 
+    function formatText(text: string) {
+        const parts = text.split(/(\*\*.*?\*\*)/);
+        return parts.map((part, index) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+                return <span key={index} className="font-bold">{part.slice(2, -2)}</span>;
+            }
+            return part;
+        });
+    }
+
     return (
         <>
             <section id={'drawing'}
@@ -312,7 +322,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                         className="bg-transparent"
                                     />
                                 ) : (
-                                    poi.text
+                                    formatText(poi.text)
                                 )
                             }
                             extraImageSrc={poi.extraImageSrc}
