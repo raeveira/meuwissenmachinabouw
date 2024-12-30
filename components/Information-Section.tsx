@@ -647,7 +647,7 @@ const InformationSection = ({loggedIn}: { loggedIn: boolean }) => {
                                         className="bg-transparent"
                                     />
                                 ) : (
-                                    poi.text
+                                    formatText(poi.text)
                                 )
                             }
                             extraImageSrc={poi.extraImageSrc}
